@@ -7,7 +7,11 @@ Stack *initialStack(int length) {
     Stack *st;
 
     st = (Stack*) malloc(sizeof(Stack));
+    if(!st) return NULL;
+
     st->items = (int*) malloc(length * sizeof(int));    // allocate memory for the items array
+    if(!st->items) return NULL;
+
     st->length = length;
     st->top = -1;
 
@@ -30,16 +34,17 @@ int isEmpty(Stack *st) {
     else return 0;
 }
 
-void push(Stack *st) {
-    int NUMBER_INPUT;
-    printf("Enter a number to push on the Stack: ");
-    scanf("%d", &NUMBER_INPUT);
+int peek(Stack *st) {
+    /* Return the top index of the items */
+    return st->items[st->top];
+}
 
+void push(Stack *st, int number) {
     if(isFull(st)) printf("The Stack is full...\n");
     else
     {
         st->top++;
-        st->items[st->top] = NUMBER_INPUT;
+        st->items[st->top] = number;
     }
 }
 

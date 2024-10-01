@@ -12,7 +12,8 @@ void freeStack(Stack *st);
 
 int isFull(Stack *st);
 int isEmpty(Stack *st);
-void push(Stack *st);
+void push(Stack *st, int number);
 int pop(Stack *st);
+int peek(Stack *st);
 
 #endif  // STACK_H
