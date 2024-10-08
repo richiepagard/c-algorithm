@@ -21,6 +21,9 @@ int main() {
     new_node = initialNodeSingly(45);
     insertBeginSingly(&head, new_node);
 
+    new_node = initialNodeSingly(46);
+	insertPosition(&head, new_node, 3);	// insert at position
+
     displaySingly(&head);
 
     // Free the memory used for the nodes
