@@ -45,10 +45,10 @@ void insertLastSingly(Node **head, Node *new_node) {
     }
 }
 
-void insertPosition(Node **head, Node *new_node, int position) {
+void insertPositionSingly(Node **head, Node *new_node, int position) {
     int counter = 0;
     Node *current = *head;
-	Node *ptr;
+	Node *previous;
 
     while(current != NULL)
     {
@@ -62,11 +62,11 @@ void insertPosition(Node **head, Node *new_node, int position) {
 		current = *head;
 		for(int i = 0; i < position; i++)
 		{
-			ptr = current;
+			previous = current;
 			current = current->next;	// move the current node
 		}
 		// set the new node position
-		ptr->next = new_node;
+		previous->next = new_node;
 		new_node->next = current;
 	} else {
 		printf("Position Out Of Range...\n");

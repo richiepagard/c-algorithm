@@ -10,7 +10,7 @@ typedef struct node {
 Node *initialNodeSingly(int value);
 void insertBeginSingly(Node **head, Node *new_node);
 void insertLastSingly(Node **head, Node *new_node);
-void insertPosition(Node **head, Node *new_node, int position);
+void insertPositionSingly(Node **head, Node *new_node, int position);
 void displaySingly(Node **head);
 
 #endif

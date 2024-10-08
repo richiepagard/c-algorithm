@@ -22,7 +22,7 @@ int main() {
     insertBeginSingly(&head, new_node);
 
     new_node = initialNodeSingly(46);
-	insertPosition(&head, new_node, 3);	// insert at position
+	insertPositionSingly(&head, new_node, 3);	// insert at position
 
     displaySingly(&head);
 
