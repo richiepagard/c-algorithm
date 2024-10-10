@@ -24,7 +24,10 @@ int main() {
     new_node = initialNodeSingly(46);
 	insertPositionSingly(&head, new_node, 3);	// insert at position
 
-    displaySingly(&head);
+    displaySingly(&head);   // show the list before deletion action
+
+    deletePositionSingly(&head, 2); // delete at position
+    displaySingly(&head);   // show the list after deletion action
 
     // Free the memory used for the nodes
     while (head != NULL) {
