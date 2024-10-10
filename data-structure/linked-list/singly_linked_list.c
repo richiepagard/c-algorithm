@@ -18,6 +18,7 @@ Node *initialNodeSingly(int value) {
     }
 }
 
+
 void insertBeginSingly(Node **head, Node *new_node) {    
     if(*head == NULL)
     {
@@ -72,6 +73,70 @@ void insertPositionSingly(Node **head, Node *new_node, int position) {
 		printf("Position Out Of Range...\n");
 	}
 }
+
+
+void deleteBeginSingly(Node **head) {
+    if(*head == NULL) return;
+    else
+    {
+        Node *current = *head;
+
+        *head = current->next; // the `head` changes to the second node
+        free(current); // free the memory of `current`
+    }
+}
+
+void deleteLastSingly(Node **head) {
+    if(*head == NULL) return;
+    else
+    {
+        Node *current = *head, *previous = *head;
+
+        while(current->next != NULL)
+        {
+            /* traverse until the node points to the NULL */
+
+            previous = current; // save the previous node of the `current` node
+            current = current->next;    // move the `current` to the next node
+        }
+        previous->next = NULL;  // the previous node points to the NULL
+        free(current);  // free the memory of `current`
+    }
+}
+
+void deletePositionSingly(Node **head, int position) {
+    int counter = 0;
+
+    if(*head == NULL) return;
+
+    Node *current = *head;
+	Node *previous;
+    if(position == 0) deleteBeginSingly(head);  // delete the first node
+    else
+    {
+        while(current != NULL)
+        {
+            current = current->next;    // move the `current` to the next node
+            counter++;
+        }
+        if(position > 0 && position <= counter)
+        {
+            current = *head;    // rewrite the `current` to the `head` node
+            for(int i = 0; i < position; i++)
+            {
+                previous = current; // set the `current` previous node to the previous
+                current = current->next;    // move the `current` to the next node
+            }
+            previous->next = current->next; // the `previous` point to the next node of the `current` node
+        } else {
+		    printf("Position Out Of Range...\n");
+	    }
+
+        free(current);  // free the memoty of `current`
+    }
+
+}
+
 
 void displaySingly(Node **head) {
     Node *temp;
