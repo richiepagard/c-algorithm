@@ -161,7 +161,6 @@ void displaySingly(Node **head) {
 void displayReverseSingly(Node **head) {
     if(*head == NULL) return;
 
-
     displayReverseSingly(&(*head)->next);
     printf("%d -> ", (*head)->data);
 }
