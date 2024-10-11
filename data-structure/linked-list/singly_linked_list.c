@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 #include "linked_list.h"
 
@@ -155,4 +156,30 @@ void displaySingly(Node **head) {
         temp = temp->next;
     }
     printf("NULL\n");
+}
+
+void displayReverseSingly(Node **head) {
+    if(*head == NULL) return;
+
+    displayReverseSingly(&(*head)->next);
+    printf("%d -> ", (*head)->data);
+}
+
+
+int findMaximumSingly(Node **head) {
+    /* find the maximum node's data and return it */
+
+    int maximum = INT_MIN;
+
+    if(*head == NULL) return -1;    // if list is empty, return `-1`
+
+    Node *current = *head;
+    while(current != NULL)
+    {
+        // set `current` data to the `maximum` if current data is greatr than maximum
+        if(current->data > maximum) maximum = current->data;
+        current = current->next;    // move the `current` to the next node
+    }
+
+    return maximum;
 }

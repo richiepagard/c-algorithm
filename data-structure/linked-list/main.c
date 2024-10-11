@@ -29,6 +29,11 @@ int main() {
     deletePositionSingly(&head, 2); // delete at position
     displaySingly(&head);   // show the list after deletion action
 
+    printf("The Maximum Data: %d\n", findMaximumSingly(&head));
+
+    displayReverseSingly(&head);    // show the list reverse
+    printf("NULL\n");
+
     // Free the memory used for the nodes
     while (head != NULL) {
         Node *tmp = head;

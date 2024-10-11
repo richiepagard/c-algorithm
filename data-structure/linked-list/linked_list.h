@@ -19,6 +19,9 @@ void deleteLastSingly(Node **head);
 void deletePositionSingly(Node **head, int position);
 
 void displaySingly(Node **head);
+void displayReverseSingly(Node **head);
+
+int findMaximumSingly(Node **head);
 // End Singly Linked List
 
 #endif
