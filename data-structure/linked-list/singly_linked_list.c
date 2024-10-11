@@ -158,6 +158,14 @@ void displaySingly(Node **head) {
     printf("NULL\n");
 }
 
+void displayReverseSingly(Node **head) {
+    if(*head == NULL) return;
+
+
+    displayReverseSingly(&(*head)->next);
+    printf("%d -> ", (*head)->data);
+}
+
 
 int findMaximumSingly(Node **head) {
     /* find the maximum node's data and return it */

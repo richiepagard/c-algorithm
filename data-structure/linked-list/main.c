@@ -31,6 +31,9 @@ int main() {
 
     printf("The Maximum Data: %d\n", findMaximumSingly(&head));
 
+    displayReverseSingly(&head);    // show the list reverse
+    printf("NULL\n");
+
     // Free the memory used for the nodes
     while (head != NULL) {
         Node *tmp = head;
