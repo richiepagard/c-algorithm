@@ -17,6 +17,7 @@ void insertPositionSingly(Node **head, Node *new_node, int position);
 void deleteBeginSingly(Node **head);
 void deleteLastSingly(Node **head);
 void deletePositionSingly(Node **head, int position);
+void deleteWholeListSingly(Node **head);
 
 void displaySingly(Node **head);
 void displayReverseSingly(Node **head);
