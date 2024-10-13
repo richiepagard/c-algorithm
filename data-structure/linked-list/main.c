@@ -34,12 +34,21 @@ int main() {
     displayReverseSingly(&head);    // show the list reverse
     printf("NULL\n");
 
-    // Free the memory used for the nodes
-    while (head != NULL) {
-        Node *tmp = head;
-        head = head->next;
-        free(tmp);
-    }
+	// delete the whole list and free the memory, use the recursive function for this
+	deleteWholeListSingly(&head);
+	printf("The Whole List Deleted !\n");
+
+	/* if you want to delete all the nodes and free the memory, 
+	 * use these lines and remove the `deleteWholeListSingly method or comment it
+
+		// Free the memory used for the nodes
+		while (head != NULL) {
+			Node *tmp = head;
+			head = head->next;
+			free(tmp);
+		}
+
+	*/
 
     return 0;
 }

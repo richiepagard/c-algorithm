@@ -138,6 +138,17 @@ void deletePositionSingly(Node **head, int position) {
 
 }
 
+void deleteWholeListSingly(Node **head) {
+	/* function for delete the whole list and free the memory.
+	 * use the recursive way.*/
+
+	if(*head == NULL) return;
+
+	deleteWholeListSingly(&(*head)->next);
+	free(*head);
+}
+
+
 
 void displaySingly(Node **head) {
     Node *temp;
