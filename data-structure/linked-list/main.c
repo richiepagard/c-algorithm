@@ -29,14 +29,16 @@ int main() {
     deletePositionSingly(&head, 2); // delete at position
     displaySingly(&head);   // show the list after deletion action
 
-    printf("The Maximum Data: %d\n", findMaximumSingly(&head));
-
     displayReverseSingly(&head);    // show the list reverse
     printf("NULL\n");
 
+	// call the tool functions
+    printf("\nThe Maximum Data: %d\n", findMaximumSingly(&head));
+	printf("Quantity Of Nodes: %d\n", countNodeSingly(&head));
+
 	// delete the whole list and free the memory, use the recursive function for this
 	deleteWholeListSingly(&head);
-	printf("The Whole List Deleted !\n");
+	printf("\nThe Whole List Deleted !\n");
 
 	/* if you want to delete all the nodes and free the memory, 
 	 * use these lines and remove the `deleteWholeListSingly method or comment it
