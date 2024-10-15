@@ -34,7 +34,7 @@ int main() {
 
 	// call the tool functions
     printf("\nThe Maximum Data: %d\n", findMaximumSingly(&head));
-	printf("Quantity Of Nodes: %d\n", countNode(&head));
+	printf("Quantity Of Nodes: %d\n", countNodeSingly(&head));
 
 	// delete the whole list and free the memory, use the recursive function for this
 	deleteWholeListSingly(&head);
