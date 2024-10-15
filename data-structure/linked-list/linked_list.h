@@ -23,6 +23,7 @@ void displaySingly(Node **head);
 void displayReverseSingly(Node **head);
 
 int findMaximumSingly(Node **head);
+int countNode(Node **head);
 // End Singly Linked List
 
 #endif

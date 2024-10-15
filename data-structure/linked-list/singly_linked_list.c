@@ -194,3 +194,11 @@ int findMaximumSingly(Node **head) {
 
     return maximum;
 }
+
+int countNode(Node **head) {
+	/* count the nodes of the list and return it  */
+
+	if(*head == NULL) return 0;
+	else return(1 + countNode(&(*head)->next));
+}
+
