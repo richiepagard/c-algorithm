@@ -25,16 +25,29 @@ int main() {
 	insertPositionSingly(&head, new_node, 3);	// insert at position
 
     displaySingly(&head);   // show the list before deletion action
+	printf("\n");
 
     deletePositionSingly(&head, 2); // delete at position
     displaySingly(&head);   // show the list after deletion action
 
+	printf("\n	Display List, Reversed: \n\t");
     displayReverseSingly(&head);    // show the list reverse
     printf("NULL\n");
 
 	// call the tool functions
     printf("\nThe Maximum Data: %d\n", findMaximumSingly(&head));
 	printf("Quantity Of Nodes: %d\n", countNodeSingly(&head));
+
+	// concatenate two singly linked list
+	Node *head2 = NULL;
+	Node *new_node2;
+	new_node2 = initialNodeSingly(90);
+	insertBeginSingly(&head2, new_node2);
+
+	Node *result = concatenateTwoListSingly(&head, &head2);
+	printf("\nThe Result Of Concatenation: \n\t");
+	displaySingly(&result);
+
 
 	// delete the whole list and free the memory, use the recursive function for this
 	deleteWholeListSingly(&head);

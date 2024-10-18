@@ -156,11 +156,11 @@ void displaySingly(Node **head) {
 
     if(*head == NULL)
     {
-        printf("The List Is Empty !\n");
+        printf("\nThe List Is Empty !\n");
         return;
     }
 
-    printf("The Elements Of The List: \n");
+    printf("The Elements Of The List: \n\t");
     while(temp != NULL)
     {
         printf("%d -> ", temp->data);
@@ -202,3 +202,21 @@ int countNodeSingly(Node **head) {
 	else return(1 + countNodeSingly(&(*head)->next));
 }
 
+
+Node *concatenateTwoListSingly(Node **head1, Node **head2) {
+    /* concatenation, concatenate two singly linked list together and return the first list */
+
+	Node *current = *head1;
+
+	if(*head1 == NULL) return *head2;
+	if(*head2 == NULL) return *head1;
+	else
+	{
+		if(*head2 != NULL)
+		{
+			for(current = *head1; current->next != NULL; current = current->next);
+			current->next = *head2;
+		}
+		return *head1;
+	}
+}

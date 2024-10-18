@@ -24,6 +24,8 @@ void displayReverseSingly(Node **head);
 
 int findMaximumSingly(Node **head);
 int countNodeSingly(Node **head);
+
+Node *concatenateTwoListSingly(Node **head1, Node **head2);
 // End Singly Linked List
 
 #endif
