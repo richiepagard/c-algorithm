@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdbool.h>
 
 #include "linked_list.h"
 
@@ -202,6 +203,26 @@ int countNodeSingly(Node **head) {
 	else return(1 + countNodeSingly(&(*head)->next));
 }
 
+bool searchRecursiveSingly(Node **head, int data) {
+	/* search for `data` and if the data is exists in the list, then return True,
+	 * otherwise, return False*/
+
+	if(*head == NULL) return false;
+	else if( (*head)->data == data ) return true;
+
+	return searchRecursiveSingly(&(*head)->next, data);
+}
+
+int findIndexRecursiveSingly(Node **head, int data) {
+	/* find the `data` index in the list and return it  */
+
+	int counter = 0;
+
+	if(counter == data) return (*head)->data;
+
+	return findIndexRecursiveSingly(&(*head)->next, data - 1);
+}
+
 
 Node *concatenateTwoListSingly(Node **head1, Node **head2) {
     /* concatenation, concatenate two singly linked list together and return the first list */
@@ -220,3 +241,4 @@ Node *concatenateTwoListSingly(Node **head1, Node **head2) {
 		return *head1;
 	}
 }
+

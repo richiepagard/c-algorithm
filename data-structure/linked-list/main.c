@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "linked_list.h"
 
@@ -35,8 +36,18 @@ int main() {
     printf("NULL\n");
 
 	// call the tool functions
+	int data_search, index_data_find;
+
     printf("\nThe Maximum Data: %d\n", findMaximumSingly(&head));
 	printf("Quantity Of Nodes: %d\n", countNodeSingly(&head));
+
+	printf("\nEnter a number to search in the list: ");
+	scanf("%d", &data_search);
+	searchRecursiveSingly(&head, data_search) ? printf("%d Found In The List :)\n", data_search) : printf("%d Not Found In The List :(\n", data_search);
+
+	printf("\nEnter an index to find the data of the index in the list: ");
+	scanf("%d", &index_data_find);
+	printf("Index %d Has The Number %d.\n", index_data_find, findIndexRecursiveSingly(&head, index_data_find));
 
 	// concatenate two singly linked list
 	Node *head2 = NULL;
