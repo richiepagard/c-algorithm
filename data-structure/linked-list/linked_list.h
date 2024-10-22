@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 #ifndef LINKED_LIST
 #define LINKED_LIST
 
@@ -24,6 +26,8 @@ void displayReverseSingly(Node **head);
 
 int findMaximumSingly(Node **head);
 int countNodeSingly(Node **head);
+bool searchRecursiveSingly(Node **head, int data);
+int findIndexRecursiveSingly(Node **head, int data);
 
 Node *concatenateTwoListSingly(Node **head1, Node **head2);
 // End Singly Linked List
