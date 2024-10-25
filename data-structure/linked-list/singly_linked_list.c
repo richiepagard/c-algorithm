@@ -150,7 +150,6 @@ void deleteWholeListSingly(Node **head) {
 }
 
 
-
 void displaySingly(Node **head) {
     Node *temp;
     temp = *head;
@@ -241,4 +240,3 @@ Node *concatenateTwoListSingly(Node **head1, Node **head2) {
 		return *head1;
 	}
 }
-

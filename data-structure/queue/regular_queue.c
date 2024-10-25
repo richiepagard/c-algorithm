@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "queue.h"
+
+#include "include/queue.h"
 
 
 RegularQueue *initialRegular(unsigned capacity) {
