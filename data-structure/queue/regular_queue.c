@@ -31,7 +31,7 @@ void enqueue(RegularQueue *q, int item) {
 	q->items[tmp] = item;
 	q->size = q->size + 1;
 
-	printf("%d Added to the Queue.\n", item);
+	printf("\t%d Added to the Queue.\n", item);
 }
 
 int dequeue(RegularQueue *q) {

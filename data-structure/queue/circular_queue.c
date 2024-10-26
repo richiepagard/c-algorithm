@@ -67,10 +67,10 @@ int dequeueCicular(CircularQueue *q) {
 void show(CircularQueue *q) {
 	if(q->front == -1)
 	{
-		printf("\nThe Queue is empty.");
+		printf("\n\tThe Queue is empty.");
 		return;
 	}
-	printf("\nElements: ");
+	printf("\n\tElements: ");
 	if(q->front <= q->rear)
 	{
 		for(int i = q->front; i <= q->rear; i++) printf("%d\t", q->items[i]);

@@ -7,7 +7,7 @@
 
 Node *initialNodeSingly(int value) {
     /* initial (create) a new node */
-    Node *new_node = (Node*) malloc(sizeof(Node));  // Fixed allocation
+    Node *new_node = (Node*) malloc(sizeof(Node));
 
     if(new_node == NULL) {
         printf("Couldn't Allocate !\n");
@@ -51,11 +51,38 @@ void enqueueLinkedList(RegularQueueLinkedList *q, int item) {
     q->rear = new_node;    // change the rear
 }
 
+void dequeueLinkedList(RegularQueueLinkedList *q) {
+    /* delete the front item of the queue and deallocate the memory of the item */
+    
+    Node *temp = q->front;
+    
+    if(isEmptyRegularQLL(q))
+    {
+        printf("Queue Underflow...\n");
+        return;
+    }
+
+    q->front = q->front->next;  // move front a node ahead
+
+    if(q->front == NULL) q->rear = NULL;
+
+    free(temp); // deallocate the memory of the old front node
+}
+
 int getFront(RegularQueueLinkedList *q) {
-    if(isEmptyRegularQLL(q))    // Corrected function call
+    if(isEmptyRegularQLL(q))
     {
         printf("Queue Is Empty...\n");
         return INT_MIN;
     }
     return q->front->data;
+}
+
+int getRear(RegularQueueLinkedList *q) {
+    if(isEmptyRegularQLL(q))
+    {
+        printf("Queue Is Empty...\n");
+        return INT_MIN;
+    }
+    return q->rear->data;
 }

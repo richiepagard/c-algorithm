@@ -15,9 +15,12 @@ typedef struct queue_linked_list {
 
 Node *initialNodeSingly(int value);
 RegularQueueLinkedList *initialRegularQueueLinkedList(unsigned capacity);
-int isEmptyRegularQLL(RegularQueueLinkedList *q);
-void enqueueLinkedList(RegularQueueLinkedList *q, int item);
-int getFront(RegularQueueLinkedList *q);
 
+void enqueueLinkedList(RegularQueueLinkedList *q, int item);
+void dequeueLinkedList(RegularQueueLinkedList *q);
+
+int isEmptyRegularQLL(RegularQueueLinkedList *q);
+int getFront(RegularQueueLinkedList *q);
+int getRear(RegularQueueLinkedList *q);
 
 #endif // QUEUE_LINKEDLIST_H
