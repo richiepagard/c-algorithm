@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stack.h>
+
+#include "include/stack.h"
+#include "include/stack_linked_list.h"
 
 
 int main() {
@@ -26,5 +28,19 @@ int main() {
     printf("The top item: %d\n", top);
 
 	freeStack(st);
+
+	StackLinkedList *stack_ll;
+    stack_ll = initialStackLinkedList();
+
+    pushLinkedList(stack_ll, 3);
+    pushLinkedList(stack_ll, 6);
+    pushLinkedList(stack_ll, 9);
+    printf("The top item of the stack linked list: %d\n", peekLinkedList(stack_ll));
+
+    popLinkedList(stack_ll);
+    printf("The top item of the stack linked list after deletion: %d\n", peekLinkedList(stack_ll));
+
+    free(stack_ll);
+
     return 0;
 }
