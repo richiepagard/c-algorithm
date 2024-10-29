@@ -3,7 +3,7 @@
 #include <limits.h>
 #include <stdbool.h>
 
-#include "linked_list.h"
+#include "include/singly_linked_list.h"
 
 
 Node *initialNodeSingly(int value) {

@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "linked_list.h"
+#include "include/singly_linked_list.h"
+#include "include/doubly_linked_list.h"
 
 
 int main() {
     Node *head = NULL;  // start node of the linked list
     Node *new_node;
 
+	// Singly Linked List
     new_node = initialNodeSingly(10);
     insertLastSingly(&head, new_node);
 
@@ -63,6 +65,35 @@ int main() {
 	// delete the whole list and free the memory, use the recursive function for this
 	deleteWholeListSingly(&head);
 	printf("\nThe Whole List Deleted !\n");
+	// End Singly Linked List
+
+	// Doubly Linked List
+	NodeDoubly *head_doubly = NULL;
+	NodeDoubly *new_node_doubly;
+	
+	printf("\n\n\t\t\tStart The Doubly Linked List\n\n");
+
+	for(int i = 0; i <= 7; i++) initialNodeDoubly(&head_doubly, i);
+	displayDoubly(&head_doubly);
+	printf("\n");
+
+	insertBeginDoubly(&head_doubly, 23);
+	displayDoubly(&head_doubly);
+	printf("\n");
+
+	initialNodeDoubly(&head_doubly, 13);
+	displayDoubly(&head_doubly);
+	printf("\n");
+
+	insertLastDoubly(&head_doubly, 36);
+	displayDoubly(&head_doubly);
+	printf("\n");
+
+
+	// delete the whole list and free the memory, use the recursive function for this
+	deleteWholeListDoubly(&head_doubly);
+	printf("\nThe Whole List Deleted !\n");
+	// End Doubly Linked List
 
 	/* if you want to delete all the nodes and free the memory, 
 	 * use these lines and remove the `deleteWholeListSingly method or comment it
