@@ -54,6 +54,41 @@ void insertLastDoubly(NodeDoubly **head, int value) {
 	new_node->previous = current;	// the new node's previous is points to the current
 }
 
+void insertPositionDoubly(NodeDoubly **head, int position, int value) {
+	/*	insert a new node at the position, if the position is invalid then exit the program,
+		but if the position is the last position then insert a new node at the end of the list,
+		and if the position is at first or between first and last index, then add the new node
+		to the position.
+		indexes of the list start from `0`.
+	*/
+	
+	NodeDoubly *new_node = (NodeDoubly*) malloc(sizeof(NodeDoubly));
+	NodeDoubly *current = (*head);
+
+	if((*head) == NULL) return;
+
+	for(int i = 0; i < position-1; i++)
+	{
+		/* traverse to the position and move the `current` node to the position */
+		current = current->next;
+		if(current == NULL) {
+			printf("The position is invalid !\n");
+			return;
+		}
+	}
+
+	new_node->data = value;
+
+	if(current->next == NULL) insertLastDoubly(&(*head), value);	// if `current` is the last position(node), then add the node at the end
+	else
+	{
+		new_node->next = current->next;	// point the next of the new node to the node currently after the current(position) node
+		new_node->next->previous = new_node;	// update the previous of the next node to point back to the new node
+		current->next = new_node;	// link the current(position) node's next to the new node
+		new_node->previous = current;	// set the previous of the new node to the current(position) node.
+	}
+}
+
 
 void deleteWholeListDoubly(NodeDoubly **head) {
 	/*	function for delete the whole list and free the memory.

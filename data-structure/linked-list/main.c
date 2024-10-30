@@ -89,6 +89,10 @@ int main() {
 	displayDoubly(&head_doubly);
 	printf("\n");
 
+	insertPositionDoubly(&head_doubly, 2, 32);	// insert `32` to the second index, indexes start from `0`
+	displayDoubly(&head_doubly);
+	printf("\n");
+
 
 	// delete the whole list and free the memory, use the recursive function for this
 	deleteWholeListDoubly(&head_doubly);
