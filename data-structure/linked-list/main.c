@@ -93,6 +93,10 @@ int main() {
 	displayDoubly(&head_doubly);
 	printf("\n");
 
+	insertAfterNodeDoubly(head_doubly->next->next, 56);	// the value -56- going to insert at third position
+	displayDoubly(&head_doubly);
+	printf("\n");
+
 
 	// delete the whole list and free the memory, use the recursive function for this
 	deleteWholeListDoubly(&head_doubly);

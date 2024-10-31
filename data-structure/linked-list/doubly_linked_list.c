@@ -85,8 +85,27 @@ void insertPositionDoubly(NodeDoubly **head, int position, int value) {
 		new_node->next = current->next;	// point the next of the new node to the node currently after the current(position) node
 		new_node->next->previous = new_node;	// update the previous of the next node to point back to the new node
 		current->next = new_node;	// link the current(position) node's next to the new node
-		new_node->previous = current;	// set the previous of the new node to the current(position) node.
+		new_node->previous = current;	// set the previous of the new node to the current(position) node
 	}
+}
+
+void insertAfterNodeDoubly(NodeDoubly *node_position, int value) {
+	/*	insert a new node after the specified node provided by the function.
+		if the node is NULL, return and exit the function; otherwise,
+		allocate a new node and insert it after the specified node.
+	*/
+
+	if(node_position == NULL) return;
+
+	NodeDoubly *new_node = (NodeDoubly*) malloc(sizeof(NodeDoubly));
+
+	new_node->data = value;
+	new_node->next = node_position->next;	// point the next of the new node to the node after the `node_position` node
+	new_node->previous = node_position;	// set the previous of the new node to the `node_position` node
+	node_position->next = new_node;	// update the next of the `node_position` to the new node
+
+	// update the previous of the next node to point back to the new node, if the next of the new node isn't NULL
+	if(new_node->next != NULL) new_node->next->previous = new_node;
 }
 
 
