@@ -97,6 +97,14 @@ int main() {
 	displayDoubly(&head_doubly);
 	printf("\n");
 
+	deleteFirstDoubly(&head_doubly);
+	displayDoubly(&head_doubly);
+	printf("\n");
+
+	deleteLastDoubly(&head_doubly);
+	displayDoubly(&head_doubly);
+	printf("\n");
+
 
 	// delete the whole list and free the memory, use the recursive function for this
 	deleteWholeListDoubly(&head_doubly);

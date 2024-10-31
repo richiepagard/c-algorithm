@@ -14,6 +14,8 @@ void insertLastDoubly(NodeDoubly **head, int value);
 void insertPositionDoubly(NodeDoubly **head, int position, int value);
 void insertAfterNodeDoubly(NodeDoubly *node_position, int value);
 
+void deleteFirstDoubly(NodeDoubly **head);
+void deleteLastDoubly(NodeDoubly **head);
 void deleteWholeListDoubly(NodeDoubly **head);
 
 void displayDoubly(NodeDoubly **head);

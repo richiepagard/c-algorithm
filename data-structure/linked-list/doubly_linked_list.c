@@ -109,6 +109,32 @@ void insertAfterNodeDoubly(NodeDoubly *node_position, int value) {
 }
 
 
+void deleteFirstDoubly(NodeDoubly **head) {
+	/* delete the first node of the list and deallocate the memory */
+	
+	if(*head == NULL) return;
+
+	NodeDoubly *temp = *head;
+
+	(*head) = (*head)->next;	// update the `head` to the next node of the current head
+	if(*head != NULL) (*head)->previous = NULL;	// set the previous of the new `head` to the NULL, if the new `head` isn't NULL
+
+	free(temp);	// deallocate the memory
+}
+
+void deleteLastDoubly(NodeDoubly **head) {
+	/* delete the last node of the list and deallocate the memory */
+
+	if(*head == NULL) return;
+
+	NodeDoubly *temp = *head;
+
+	while(temp->next != NULL) temp = temp->next;	// traverse to the last node
+	temp->previous->next = NULL;	// update the next of the previous node(last node) to point to the NULL
+
+	free(temp);	// deallocate the memory
+}
+
 void deleteWholeListDoubly(NodeDoubly **head) {
 	/*	function for delete the whole list and free the memory.
 	 	use the recursive way.*/
