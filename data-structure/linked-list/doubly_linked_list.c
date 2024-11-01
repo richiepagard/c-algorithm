@@ -135,6 +135,42 @@ void deleteLastDoubly(NodeDoubly **head) {
 	free(temp);	// deallocate the memory
 }
 
+void deleteNodeByValue(NodeDoubly **head, int value) {
+	/*	delete a specified node by a specified value provided by the function.
+
+		if the node is NULL, return and exit the function; otherwise,
+		if the value is the value of the first node, then delete the node, but
+		if the value is the value of the last node, then delete the node, but finally,
+		if the value is between first and last node, traverse to the list and find the node 
+		with that value and delete the node and also deallocate the memory of the node.
+	 */
+
+	if((*head) == NULL) return;
+
+	NodeDoubly *temp = *head;	// the temporary node for deallocating the deleted node
+	NodeDoubly *current = *head;	// the `current` node is the traversing node for traverse to the list on each node
+
+	if((*head)->data == value)
+	{
+		deleteFirstDoubly(&(*head));
+		return;
+	}
+
+	while(current->next->next != NULL)	// // traverse to the list until the previous node of the last node
+	{
+		if(current->next->data == value) {
+			temp = current->next;	// update the `temp` to the next node of the `current` node
+			current->next = temp->next;	// update the next node of the `current` to the next node of the `temp`
+			temp->next->previous = current;	// update the previous of the next node to point back to the `current` node
+			free(temp);	// deallocate the memory of the `temp` node
+			return;
+		}
+		current = current->next;	// move the current
+	}
+
+	if(current->next->data == value) deleteLastDoubly(&(*head));
+}
+
 void deleteWholeListDoubly(NodeDoubly **head) {
 	/*	function for delete the whole list and free the memory.
 	 	use the recursive way.*/

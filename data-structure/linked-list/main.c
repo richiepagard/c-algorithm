@@ -105,6 +105,10 @@ int main() {
 	displayDoubly(&head_doubly);
 	printf("\n");
 
+	deleteNodeByValue(&head_doubly, 3);	// delete the node with value 3
+	displayDoubly(&head_doubly);
+	printf("\n");
+
 
 	// delete the whole list and free the memory, use the recursive function for this
 	deleteWholeListDoubly(&head_doubly);
