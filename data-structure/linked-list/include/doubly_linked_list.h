@@ -19,6 +19,8 @@ void deleteLastDoubly(NodeDoubly **head);
 void deleteNodeByValue(NodeDoubly **head, int value);
 void deleteWholeListDoubly(NodeDoubly **head);
 
+void reverseListDoubly(NodeDoubly **head);
+
 void displayDoubly(NodeDoubly **head);
 
 #endif	// DOUBLY_LINKED_LIST

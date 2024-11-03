@@ -200,3 +200,21 @@ void displayDoubly(NodeDoubly **head) {
 	}
 	printf("NULL\n");
 }
+
+void reverseListDoubly(NodeDoubly **head) {
+	NodeDoubly *temp, *current;	// temp: temporary node for helper pointer and change the head after reverse. current: traverse to the list on each node
+
+	temp = *head;	// set temp to the current head node
+	current = temp->next;
+	temp->next = NULL;	// the next of temporary node set to the NULL
+	temp->previous = current;	// update the previous node of the temporary node to the current second node
+
+	while(current != NULL)
+	{
+		current->previous = current->next;	// set the previous pointer of the current node to point to its next node during traversal
+		current->next = temp;	// set the next pointer of the current node to the temporary node (current head) during traversal
+		temp = current;	// move the temporary node to the current node
+		current = current->previous;	// update the current node to its previous pointer
+	}
+	(*head) = temp;	// set the temporary node as the head node after traversal
+}

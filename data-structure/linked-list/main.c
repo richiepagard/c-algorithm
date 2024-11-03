@@ -109,6 +109,10 @@ int main() {
 	displayDoubly(&head_doubly);
 	printf("\n");
 
+	printf("\nThe Doubly Linked List After Reversing Action: \n");
+	reverseListDoubly(&head_doubly);
+	displayDoubly(&head_doubly);
+	printf("\n");
 
 	// delete the whole list and free the memory, use the recursive function for this
 	deleteWholeListDoubly(&head_doubly);
