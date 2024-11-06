@@ -11,6 +11,7 @@ void insertBeginCircularSingly(NodeCircularSingly **head, int value);
 void insertLastCircularSingly(NodeCircularSingly **head, int value);
 
 void deleteFirstCircularSingly(NodeCircularSingly **head);
+void deleteLastCircularSingly(NodeCircularSingly **head);
 void deleteWholeListCircularSingly(NodeCircularSingly **head);
 
 void displayCircularSingly(NodeCircularSingly **head);

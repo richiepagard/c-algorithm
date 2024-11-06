@@ -85,6 +85,29 @@ void deleteFirstCircularSingly(NodeCircularSingly **head) {
 	free(temp);	// deallocate the memopry(delete) the old head node
 }
 
+void deleteLastCircularSingly(NodeCircularSingly **head) {
+	if(*head == NULL) return;
+
+	NodeCircularSingly *current = *head;
+	NodeCircularSingly *last_previous = *head;	// set the previous node of last node
+
+	if( (*head)->next == *head )	// check if only one node in the list
+	{
+		*head = NULL;	// set head to the NULL as the list is now empty
+		free(current);	// deallocate the memory(delete) the head node(only node in the list)
+		return;
+	}
+
+	while(current->next != *head)	// traverse until the last node
+	{
+		last_previous = current;	// save the previous item of the current during traversing
+		current = current->next;	// move the current
+	}
+	last_previous->next = *head;	// set the next pointer of the previous last node(new last node) to the head
+
+	free(current);	// deallocate the memory(delete) the old last node
+}
+
 void deleteWholeListCircularSingly(NodeCircularSingly **head) {
 	/* function for delete the whole list and free the memory. */
 

@@ -143,6 +143,10 @@ int main() {
 	displayCircularSingly(&head_circular_singly);
 	printf("\n");
 
+	deleteLastCircularSingly(&head_circular_singly);
+	displayCircularSingly(&head_circular_singly);
+	printf("\n");
+
 
 	deleteWholeListCircularSingly(&head_circular_singly);
 	// End Circular Singly Linked List
