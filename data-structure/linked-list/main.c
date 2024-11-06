@@ -139,7 +139,13 @@ int main() {
 	printf("The quantity of the nodes in the list is %d\n", countNodesCircularSingly(&head_circular_singly));
 	printf("\n");
 
+	deleteFirstCircularSingly(&head_circular_singly);
+	displayCircularSingly(&head_circular_singly);
+	printf("\n");
+
+
 	deleteWholeListCircularSingly(&head_circular_singly);
+	// End Circular Singly Linked List
 
 	/* if you want to delete all the nodes and free the memory, 
 	 * use these lines and remove the `deleteWholeListSingly method or comment it

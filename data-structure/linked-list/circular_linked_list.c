@@ -65,6 +65,26 @@ void insertLastCircularSingly(NodeCircularSingly **head, int value) {
 }
 
 
+void deleteFirstCircularSingly(NodeCircularSingly **head) {
+	if(*head == NULL) return;
+
+	NodeCircularSingly *current = *head;
+	NodeCircularSingly *temp = *head;
+
+	if((*head)->next == *head)	// check if only one node in the list
+	{
+		*head = NULL;	// set head to the NULL as the list is now empty
+		free(temp);	// deallocate the memory(delete) the head node(only node in the list)
+		return;
+	}
+
+	while(current->next != *head) current = current->next;	// traverse until the last node
+	(*head) = (*head)->next;	// update the head node to the next node of itself(second node)
+	current->next = *head;	// set the next pointer of the current(last node) node to the new head node
+
+	free(temp);	// deallocate the memopry(delete) the old head node
+}
+
 void deleteWholeListCircularSingly(NodeCircularSingly **head) {
 	/* function for delete the whole list and free the memory. */
 
