@@ -34,6 +34,36 @@ void insertBeginCircularSingly(NodeCircularSingly **head, int value) {
 	}
 }
 
+void insertLastCircularSingly(NodeCircularSingly **head, int value) {
+	/*	insert a new node at the end of the list, if the head is NULL(list is empty),
+		then the head node update to the new node and new node points to itself; otherwise,
+		traverse until the last node and the next of current last node points to the new node,
+		so the new node is the new last node and at the end, the next node of the new node(new last nole)
+		points to the head node.
+	*/
+
+	NodeCircularSingly *new_node = (NodeCircularSingly*) malloc(sizeof(NodeCircularSingly));
+	NodeCircularSingly *current = *head;
+
+	if(new_node == NULL)
+	{
+		printf("The Memory Couldn't Allocate !\n");
+		return;
+	}
+
+	new_node->data = value;
+
+	if(*head == NULL)
+	{
+		(*head) = new_node;
+		new_node->next = *head;
+	} else {
+		while(current->next != *head) current = current->next;	// traverse until the last node
+		current->next = new_node;	// set the next pointer of the current last node to the new node
+		new_node->next = *head;	// set the next pointer of the new node(new last node) to the head node
+	}
+}
+
 
 void deleteWholeListCircularSingly(NodeCircularSingly **head) {
 	/* function for delete the whole list and free the memory. */

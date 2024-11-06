@@ -129,7 +129,10 @@ int main() {
 	insertBeginCircularSingly(&head_circular_singly, 3);
 	insertBeginCircularSingly(&head_circular_singly, 6);
 	insertBeginCircularSingly(&head_circular_singly, 9);
+	displayCircularSingly(&head_circular_singly);
+	printf("\n");
 
+	insertLastCircularSingly(&head_circular_singly, 12);
 	displayCircularSingly(&head_circular_singly);
 	printf("\n");
 

@@ -8,6 +8,7 @@ typedef struct node_circular_singly {
 
 
 void insertBeginCircularSingly(NodeCircularSingly **head, int value);
+void insertLastCircularSingly(NodeCircularSingly **head, int value);
 
 void deleteWholeListCircularSingly(NodeCircularSingly **head);
 
