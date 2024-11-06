@@ -101,3 +101,18 @@ void displayCircularSingly(NodeCircularSingly **head) {
 	} while(current != *head);	// traverse on the list until the last node(the node what points to the head node)
 	printf("HEAD\n");
 }
+
+
+int countNodesCircularSingly(NodeCircularSingly **head) {
+	/* count the nodes of the list and return the total */
+
+	NodeCircularSingly *temp = *head;
+	int counter = 1;
+
+	do {
+		temp = temp->next;
+		counter++;
+	} while(temp->next != *head);	// traverse on the list until the last node
+
+	return counter;
+}

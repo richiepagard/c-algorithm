@@ -14,4 +14,6 @@ void deleteWholeListCircularSingly(NodeCircularSingly **head);
 
 void displayCircularSingly(NodeCircularSingly **head);
 
+int countNodesCircularSingly(NodeCircularSingly **head);
+
 #endif	// CIRCULAR_SINGLY_LINKED_LIST

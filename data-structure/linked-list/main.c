@@ -136,6 +136,9 @@ int main() {
 	displayCircularSingly(&head_circular_singly);
 	printf("\n");
 
+	printf("The quantity of the nodes in the list is %d\n", countNodesCircularSingly(&head_circular_singly));
+	printf("\n");
+
 	deleteWholeListCircularSingly(&head_circular_singly);
 
 	/* if you want to delete all the nodes and free the memory, 
