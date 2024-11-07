@@ -24,6 +24,13 @@ int main() {
 
 
 Node *initialNode(int value) {
+    /*  initializes(create) and returns a new node with the specified value provided by function.
+
+        @value: integer, the value to set as `data` in the new node.
+
+        returns pointer to the new node, or NULL if memory allocation fails.
+    */
+
     Node *new_node = (Node*) malloc(sizeof(Node));
 
     if(new_node == NULL)
