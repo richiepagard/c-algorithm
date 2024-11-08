@@ -10,14 +10,17 @@ typedef struct node {
 
 Node *initialNode(int value);
 void initialCircularLinkedList(Node **head, unsigned capacity);
-
 void displayList(Node **head);
+
+int josephus_problem(Node **head);
 
 
 int main() {
     Node *head = NULL;
-    initialCircularLinkedList(&head, 5);
-    displayList(&head);
+    initialCircularLinkedList(&head, 41);
+    // displayList(&head);  // uncomment it if you need to display the list
+
+    printf("The servivor's spot on: %d\n", josephus_problem(&head));
 
     return 0;
 }
@@ -69,8 +72,32 @@ void initialCircularLinkedList(Node **head, unsigned capacity) {
 }
 
 
-int josephus_problem() {
-    
+int josephus_problem(Node **head) {
+    /*  solve the Josephus problem, where people arranged in a circle are eliminated in steps
+        until only one remains. this function returns the data of the last remaining node.
+
+        @head: a pointer to the head of circular linked list where each node represents a person.
+
+        the function iteratively eliminates every second node by bypassing it in the linked list.
+        the process continues until only one node remains in the list. the data of the last remaining node
+        is returned as the `survivor` of the Josephus problem.
+
+        steps:
+        1- initialize `suicide_spot` to the head of the list, representing the current node in the elimination sequence.
+        2- iterate through the list, skipping one node(the eliminated node) and moving `suicide_spot` forward to the next node.
+        3- continue until `suicide_spot` points to itselt, indicating that only that only one node remains.
+        4- return the data of the last remaining node(survivor's data)
+    */
+
+    Node *suicide_spot = *head;
+
+    while(suicide_spot->next != suicide_spot)
+    {
+        suicide_spot->next = suicide_spot->next->next;  // eliminate the next node by linking `suicide_spot` to the nodle after the next pointer
+        suicide_spot = suicide_spot->next;  // move `suicide_spot` forward to the next node in the updated list
+    }
+
+    return suicide_spot->data;  // return the survivor's data
 }
 
 
