@@ -13,4 +13,7 @@ There are many diiferent ways to contribute to this repository, actually because
 1. Create an issue
 2. Fork the repository
 3. Work on the problem
-4. Create a pull request(PR) 
+4. Create a pull request(PR)
+
+## Challenges / Problems
+I'm pushing some of the problems I've solved, including popular problems and challenges from websites like *LeetCode and HackerRank* in [problems](https://github.com/mohammadpagard/c-algorithm/tree/main/problems) .
