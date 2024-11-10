@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "include/circular_doubly_linked_list.h"
+#include "../include/circular_doubly_linked_list.h"
 
 
 NodeCircularDoubly *initializeCircularDoubly(int value) {
@@ -69,7 +69,7 @@ void insertLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **la
     }
 }
 
-void deleteWholeListCircularDoubly(NodeCircularDoubly **head) {
+void deleteWholeListCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last) {
     /* function for delete the whole list and free the memory. */
 
 	if(*head == NULL) return;
@@ -84,12 +84,14 @@ void deleteWholeListCircularDoubly(NodeCircularDoubly **head) {
 		current = next_node;	// move to the next node
 	}
 	free(current);	// free the last node
+
 	*head = NULL;
+    *last = NULL;
 }
 
 
 void displayCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last) {
-    if( *head == *last && *head == NULL )
+    if(*head == *last && *head == NULL)
     {
         printf("The List Is Empty...\n");
         return;

@@ -23,4 +23,7 @@ void reverseListDoubly(NodeDoubly **head);
 
 void displayDoubly(NodeDoubly **head);
 
+
+void run_doubly_linked_list_example();
+
 #endif	// DOUBLY_LINKED_LIST

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "include/circular_singly_linked_list.h"
+#include "../include/circular_singly_linked_list.h"
 
 
 void insertBeginCircularSingly(NodeCircularSingly **head, int value) {
@@ -123,6 +123,7 @@ void deleteWholeListCircularSingly(NodeCircularSingly **head) {
 		current = next_node;	// move to the next node
 	}
 	free(current);	// free the last node
+
 	*head = NULL;
 
 }

@@ -3,7 +3,6 @@
 #ifndef LINKED_LIST
 #define LINKED_LIST
 
-// Singly Linked List
 typedef struct node {
     int data;
     struct node *next;
@@ -30,6 +29,8 @@ bool searchRecursiveSingly(Node **head, int data);
 int findIndexRecursiveSingly(Node **head, int data);
 
 Node *concatenateTwoListSingly(Node **head1, Node **head2);
-// End Singly Linked List
+
+
+void run_singly_linked_list_example();
 
 #endif

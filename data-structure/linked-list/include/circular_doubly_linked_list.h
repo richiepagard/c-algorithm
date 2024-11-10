@@ -10,7 +10,12 @@ typedef struct node_circular_doubly {
 NodeCircularDoubly *initializeCircularDoubly(int value);
 void insertBeginCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value);
 void insertLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value);
-void deleteWholeListCircularDoubly(NodeCircularDoubly **head);
+
+void deleteWholeListCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
+
 void displayCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
+
+
+void run_circular_doubly_linked_list_example();
 
 #endif // CIRCULAR_DOUBLY_LINKED_LIST
