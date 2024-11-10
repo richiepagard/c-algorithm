@@ -1,0 +1,16 @@
+#ifndef CIRCULAR_DOUBLY_LINKED_LIST
+#define CIRCULAR_DOUBLY_LINKED_LIST
+
+typedef struct node_circular_doubly {
+	int data;
+	struct node_circular_doubly *next;
+	struct node_circular_doubly *previous;
+} NodeCircularDoubly;
+
+NodeCircularDoubly *initializeCircularDoubly(int value);
+void insertBeginCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value);
+void insertLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value);
+void deleteWholeListCircularDoubly(NodeCircularDoubly **head);
+void displayCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
+
+#endif // CIRCULAR_DOUBLY_LINKED_LIST
