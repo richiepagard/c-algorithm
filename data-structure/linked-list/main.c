@@ -4,7 +4,9 @@
 
 #include "include/singly_linked_list.h"
 #include "include/doubly_linked_list.h"
+
 #include "include/circular_singly_linked_list.h"
+#include "include/circular_doubly_linked_list.h"
 
 
 int main() {
@@ -150,6 +152,23 @@ int main() {
 
 	deleteWholeListCircularSingly(&head_circular_singly);
 	// End Circular Singly Linked List
+
+	// Circular Doubly Linked List
+	NodeCircularDoubly *head_circular_doubly = NULL;
+	NodeCircularDoubly *last_circular_doubly = NULL;
+
+	printf("\n\n\t\t\tStart The Circular Doubly Linked List\n\n");
+
+	insertBeginCircularDoubly(&head_circular_doubly, &last_circular_doubly, 3);
+	insertBeginCircularDoubly(&head_circular_doubly, &last_circular_doubly, 6);
+	insertBeginCircularDoubly(&head_circular_doubly, &last_circular_doubly, 9);
+	displayCircularDoubly(&head_circular_doubly, &last_circular_doubly);
+
+	insertLastCircularDoubly(&head_circular_doubly, &last_circular_doubly, 12);
+	displayCircularDoubly(&head_circular_doubly, &last_circular_doubly);
+
+	deleteWholeListCircularDoubly(&head_circular_doubly);
+	// End Circular Doubly Linked List
 
 	/* if you want to delete all the nodes and free the memory, 
 	 * use these lines and remove the `deleteWholeListSingly method or comment it
