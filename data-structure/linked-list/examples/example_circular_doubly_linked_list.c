@@ -19,6 +19,14 @@ void run_circular_doubly_linked_list_example() {
 	displayCircularDoubly(&head, &last);
     printf("\n");
 
+    // delete the first and the last node
+    deleteFirstCircularDoubly(&head, &last);
+    deleteLastCircularDoubly(&head, &last);
+
+    // display the list after insertions
+    printf("List After Deletion: \n");
+	displayCircularDoubly(&head, &last);
+    printf("\n");
 
     /* you can call the tool functions here */
 
