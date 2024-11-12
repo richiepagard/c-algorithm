@@ -11,6 +11,8 @@ NodeCircularDoubly *initializeCircularDoubly(int value);
 void insertBeginCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value);
 void insertLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value);
 
+void deleteFirstCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
+void deleteLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
 void deleteWholeListCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
 
 void displayCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
