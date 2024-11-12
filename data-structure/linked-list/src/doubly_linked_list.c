@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "include/doubly_linked_list.h"
+#include "../include/doubly_linked_list.h"
 
 
 NodeDoubly *initialNodeDoubly(NodeDoubly **head, int value) {
@@ -179,6 +179,8 @@ void deleteWholeListDoubly(NodeDoubly **head) {
 
 	deleteWholeListDoubly(&(*head)->next);
 	free(*head);
+
+	*head = NULL;
 }
 
 

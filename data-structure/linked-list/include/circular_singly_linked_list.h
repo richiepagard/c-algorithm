@@ -18,4 +18,7 @@ void displayCircularSingly(NodeCircularSingly **head);
 
 int countNodesCircularSingly(NodeCircularSingly **head);
 
+
+void run_circular_singly_linked_list_example();
+
 #endif	// CIRCULAR_SINGLY_LINKED_LIST

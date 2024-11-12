@@ -3,7 +3,7 @@
 #include <limits.h>
 #include <stdbool.h>
 
-#include "include/singly_linked_list.h"
+#include "../include/singly_linked_list.h"
 
 
 Node *initialNodeSingly(int value) {
@@ -147,18 +147,20 @@ void deleteWholeListSingly(Node **head) {
 
 	deleteWholeListSingly(&(*head)->next);
 	free(*head);
+
+    *head = NULL;
 }
 
 
 void displaySingly(Node **head) {
-    Node *temp;
-    temp = *head;
-
     if(*head == NULL)
     {
         printf("\nThe List Is Empty !\n");
         return;
     }
+
+    Node *temp;
+    temp = *head;
 
     printf("The Elements Of The List: \n\t");
     while(temp != NULL)
