@@ -49,7 +49,7 @@ int heightNode(Node *node) {
     }
 }
 
-int leafQuantity(Node *node) {
+unsigned int leafQuantity(Node *node) {
     /*  return the total quantity of leafs
 
         @node: pointer to the current node being checked
@@ -67,7 +67,7 @@ int leafQuantity(Node *node) {
     else return ( leafQuantity(node->left) + leafQuantity(node->right) );
 }
 
-int nodesQuantity(Node *node) {
+unsigned int nodesQuantity(Node *node) {
     /*  return the total quantity of nodes
 
         @node: pointer to the current node being checked
