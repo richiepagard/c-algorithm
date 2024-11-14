@@ -35,4 +35,13 @@ void run_binary_tree_example() {
 
     // print the height of the binary tree from the root node
     printf("The height of the root node is: %d\n", heightNode(root_node));
+
+    // print the total quantity of the leafs and total quantity of the nodes from a node
+    printf("The total quantity of leafs from the node is: %d\n", leafQuantity(root_node));
+    printf("The total quantity of nodes: %d\n", nodesQuantity(root_node));
+
+
+    // delete the whole tree
+    printf("\nDelete the whole tree:\n");
+    deleteTree(&root_node);
 }
