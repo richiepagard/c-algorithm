@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 #include "../include/binary_tree.h"
 
@@ -44,8 +45,7 @@ int heightNode(Node *node) {
         /*  return the greater height between left and right subtrees,
             adding 1 to account for the current node level
         */
-        if(left_height > right_height) return (left_height + 1);
-        else return (right_height + 1);
+        return (left_height > right_height) ? (left_height + 1) : (right_height + 1);
     }
 }
 
@@ -78,6 +78,31 @@ unsigned int nodesQuantity(Node *node) {
     */
 
     return (node == NULL) ? 0 : (1 + nodesQuantity(node->left) + nodesQuantity(node->right));
+}
+
+int maxNode(Node *node) {
+    /*  find the maximum node of binary tree
+
+        @node: pointer to the node to find the maximum of
+
+        return INT_MIN if the node is NULL,
+        otherwise, return the maxium node of the greater subtree
+    */
+    
+    int max, left_max, right_max;   // maximum of the left and right subtrees
+
+    if(node == NULL) return INT_MIN;
+
+    max = node->data;
+    // find the maximum node of left and right subtrees
+    left_max = maxNode(node->left);
+    right_max = maxNode(node->right);
+
+    // save the greater node between left and right subtrees to the `max` variable
+    max = (left_max > max ? left_max : max);
+    max = (right_max > max ? right_max : max);
+
+    return max; // return the maximum node
 }
 
 
