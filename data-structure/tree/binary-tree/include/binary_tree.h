@@ -13,6 +13,7 @@ Node *initializeNode(int value);
 void deleteTree(Node **node);
 
 int heightNode(Node *node);
+int maxNode(Node *node);
 unsigned int leafQuantity(Node *node);
 unsigned int nodesQuantity(Node *node);
 
