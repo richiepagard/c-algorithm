@@ -30,7 +30,7 @@ int heightNode(Node *node) {
         return 0 if the node has no children (leaf node),
         otherwise, return 1 plus the height of the greater subtree
     */
-    
+
     int left_height, right_height;  // height of the left and right subtrees
 
     if(node == NULL) return -1; // return -1 for NULL nodes, indicating no height

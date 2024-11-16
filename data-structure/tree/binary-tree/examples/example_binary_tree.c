@@ -38,11 +38,19 @@ void run_binary_tree_example() {
 
     // call the tool functions here
     printf("The total quantity of leafs from the node is: %d\n", leafQuantity(root_node));  // total quantity of leafs
-    printf("The total quantity of nodes: %d\n", nodesQuantity(root_node));  // total quantity of nodes
-    printf("The maximum node is: %d\n", maxNode(root_node));    // maxmimum node
+
+
+    /*  call the traversal functions
+        e.g.
+            preorder(root_node)
+            inorder(root_node)
+            postorder(root_node)
+    */
+    printf("\nPreorder traverse on the binary tree: \n");
+    preorder(root_node);
 
 
     // delete the whole tree
-    printf("\nDelete the whole tree:\n");
+    printf("\n\nDelete the whole tree:\n");
     deleteTree(&root_node);
 }
