@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "../include/binary_tree.h"
+#include "../include/traverse.h"
 
 
 void run_binary_tree_example() {
@@ -17,21 +18,21 @@ void run_binary_tree_example() {
           6
     */
 
-    Node *root_node;
+    TreeNode *root_node;
 
     printf("Running Binary Tree Example...\n");
 
-    root_node = initializeNode(1);  // initialize the root node with a value of 1
+    root_node = initializeTreeNode(1);  // initialize the root node with a value of 1
 
     // create left and right children of the root node
-    root_node->left = initializeNode(2);
-    root_node->right = initializeNode(3);
+    root_node->left = initializeTreeNode(2);
+    root_node->right = initializeTreeNode(3);
 
     // create left and right children of the left node
-    root_node->left->left = initializeNode(4);
-    root_node->left->right = initializeNode(5);
+    root_node->left->left = initializeTreeNode(4);
+    root_node->left->right = initializeTreeNode(5);
 
-    root_node->left->right->left = initializeNode(6);   // create a left child for the node with value 5
+    root_node->left->right->left = initializeTreeNode(6);   // create a left child for the node with value 5
 
     // print the height of the binary tree from the root node
     printf("The height of the root node is: %d\n", heightNode(root_node));
@@ -42,12 +43,12 @@ void run_binary_tree_example() {
 
     /*  call the traversal functions
         e.g.
-            preorder(root_node)
-            inorder(root_node)
-            postorder(root_node)
+            preorder_recursive(root_node)
+            inorder_recursive(root_node)
+            postorder_recursive(root_node)
     */
     printf("\nPreorder traverse on the binary tree: \n");
-    preorder(root_node);
+    inorder_recursive(root_node);
 
 
     // delete the whole tree

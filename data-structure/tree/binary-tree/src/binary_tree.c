@@ -5,23 +5,37 @@
 #include "../include/binary_tree.h"
 
 
-Node *initializeNode(int value) {
-    Node *new_node = (Node*) malloc(sizeof(Node));
+TreeNode *initializeTreeNode(int value) {
+    /*  initialize a new tree node.
+        creates a new tree node, assigns the provided value to its data field,
+        and sets the left and right children to the NULL.
+
+        @value: the value to assign to the data field of the new tree node
+
+        proccess:
+            - allocate a new tree node
+            - check if memory allocation was successfull
+            - assign the provided value to the data field of the new node
+            - set the left and right child pointers to NULL
+    */
+
+    TreeNode *new_node = (TreeNode*) malloc(sizeof(TreeNode));    // allocate the memory for the new tree node
 
     if(new_node == NULL)
     {
-        printf("Couldn't Allocate...\n");
-        return NULL;    // return NULL if memory allocation fails
+        printf("Memory Allocation Failed For TreeNode! \n");
+        return NULL;
     }
 
-    new_node->data = value;
+    new_node->data = value; // assign the provided value to the new node
     new_node->left = NULL;
     new_node->right = NULL;
 
-    return new_node;    // return the new node
+    return new_node;
 }
 
-int heightNode(Node *node) {
+
+int heightNode(TreeNode *node) {
     /*  finds the height of the binary tree node
 
         @node: pointer to the node to find the height of
@@ -49,7 +63,7 @@ int heightNode(Node *node) {
     }
 }
 
-unsigned int leafQuantity(Node *node) {
+unsigned int leafQuantity(TreeNode *node) {
     /*  return the total quantity of leafs
 
         @node: pointer to the current node being checked
@@ -67,7 +81,7 @@ unsigned int leafQuantity(Node *node) {
     else return ( leafQuantity(node->left) + leafQuantity(node->right) );
 }
 
-unsigned int nodesQuantity(Node *node) {
+unsigned int nodesQuantity(TreeNode *node) {
     /*  return the total quantity of nodes
 
         @node: pointer to the current node being checked
@@ -80,7 +94,7 @@ unsigned int nodesQuantity(Node *node) {
     return (node == NULL) ? 0 : (1 + nodesQuantity(node->left) + nodesQuantity(node->right));
 }
 
-int maxNode(Node *node) {
+int maxNode(TreeNode *node) {
     /*  find the maximum node of binary tree
 
         @node: pointer to the node to find the maximum of
@@ -106,7 +120,7 @@ int maxNode(Node *node) {
 }
 
 
-void deleteTree(Node **node) {
+void deleteTree(TreeNode **node) {
     /*  delete all nodes in the binary tree, delete the whole tree
 
         @node: pointer to the current node being deleted
