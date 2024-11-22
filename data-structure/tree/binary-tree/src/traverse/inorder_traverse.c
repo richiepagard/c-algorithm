@@ -1,11 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "../../include/traverse.h"
-#include "../../include/binary_tree.h"
+#include "../../include/stack.h"
 
 
-void inorder_recursive(TreeNode *node) {
+void inorderIterator(TreeNode *root) {
+    TreeNode *current = root;   // initialize the current node to the root
+    StackNode *top = NULL;  // initialize the stack
+
+    if(root == NULL)
+    {
+        printf("Tree Is Empty !\n");
+        return;
+    }
+
+    while(current != NULL || !isEmpty(top))
+    {
+        if(current != NULL) {
+            push(&top, current);    // push the current node onto the stack
+            current = current->left;    // move to the left child
+        }
+        else
+        {
+            current = pop(&top);    // pop the top node from the stack
+            printf(" %d ", current->data);  // print the node's data
+            current = current->right;   // move the right child
+        }
+    }
+}
+
+void inorderRecursive(TreeNode *node) {
     /*  inorder traverse on the binary tree
 
         @node: pointer to the current node being visited
@@ -18,7 +44,7 @@ void inorder_recursive(TreeNode *node) {
 
    if(node == NULL) return;
 
-   inorder_recursive(node->left); // recursively traverse the left subtree
+   inorderRecursive(node->left); // recursively traverse the left subtree
    printf(" %d ", node->data);    // print the data of the current node
-   inorder_recursive(node->right);    // recursively traverse the right subtree
+   inorderRecursive(node->right);    // recursively traverse the right subtree
 }
