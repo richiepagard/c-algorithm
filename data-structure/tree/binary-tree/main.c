@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "include/binary_tree.h"
+#include "include/traverse.h"
 
 
 int main() {
