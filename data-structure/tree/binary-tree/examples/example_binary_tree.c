@@ -43,15 +43,11 @@ void run_binary_tree_example() {
 
     /*  call the traversal functions
         e.g.
-            preorder_recursive(root_node)
             inorder_recursive(root_node)
-            postorder_recursive(root_node)
     */
-    // printf("\n Preorder traverse on the binary tree (RECURSIVE): \n");
-    // preorderRecursive(root_node);
 
-    printf("\n PostOrder traverse on the binary tree (ITERATOR): \n");
-    postorderIterator(root_node);
+    printf("\n LevelOrder traverse on the binary tree (ITERATOR): \n");
+    levelorder(root_node, 100);
 
 
     // delete the whole tree
