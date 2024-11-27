@@ -119,6 +119,12 @@ int maxNode(TreeNode *node) {
     return max; // return the maximum node
 }
 
+int identical(TreeNode *node1, TreeNode *node2) {
+    if(node1 == NULL && node2 == NULL) return 1;
+    if(node1 != NULL && node2 != NULL) return( node1->data == node2->data && identical(node1->left, node2->left) && identical(node1->right, node2->right) );
+    return 0;
+}
+
 
 void deleteTree(TreeNode **node) {
     /*  delete all nodes in the binary tree, delete the whole tree

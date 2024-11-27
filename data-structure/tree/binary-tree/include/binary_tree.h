@@ -19,6 +19,8 @@ int maxNode(TreeNode *node);
 unsigned int leafQuantity(TreeNode *node);
 unsigned int nodesQuantity(TreeNode *node);
 
+int identical(TreeNode *node1, TreeNode *node2);
+
 
 
 void run_binary_tree_example();
