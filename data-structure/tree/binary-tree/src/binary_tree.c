@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdbool.h>
 
 #include "../include/binary_tree.h"
+#include "../include/queue.h"
 
 
 TreeNode *initializeTreeNode(int value) {
@@ -123,6 +125,43 @@ int identical(TreeNode *node1, TreeNode *node2) {
     if(node1 == NULL && node2 == NULL) return 1;
     if(node1 != NULL && node2 != NULL) return( node1->data == node2->data && identical(node1->left, node2->left) && identical(node1->right, node2->right) );
     return 0;
+}
+
+bool isComplete(TreeNode *root, int capacity) {
+	Queue *q = initializeQueue(capacity);
+	enqueue(q, root);
+
+	bool flag = false;  // to indicate if a non-full node has been encountered
+
+	while(!isQueueEmpty(q))
+	{
+		TreeNode *current = dequeue(q);
+
+		if(current->left)	// check the left child
+		{
+			if(flag) {  // if encountered a non-full node, the tree isn't complete
+				free(q->data);
+				free(q);
+				return false;
+			}
+			enqueue(q, current->left);
+		} else flag = true; // mark to encountered a non-full node
+
+		if(current->right)	// check the right child
+		{
+			if(flag) {
+				free(q->data);
+				free(q);
+				return false;
+			}
+			enqueue(q, current->right);
+		} else flag = true;
+	}	// END WHILE
+
+	/* deallocate(free) the queue memory */
+	free(q->data);
+	free(q);
+	return true;
 }
 
 
