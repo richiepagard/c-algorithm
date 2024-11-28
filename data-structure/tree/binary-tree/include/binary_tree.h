@@ -1,6 +1,8 @@
 #ifndef BINARY_TREE
 #define BINARY_TREE
 
+#include <stdbool.h>
+
 typedef struct tree_node {
     /* the structure for a binary tree */
 
@@ -20,6 +22,7 @@ unsigned int leafQuantity(TreeNode *node);
 unsigned int nodesQuantity(TreeNode *node);
 
 int identical(TreeNode *node1, TreeNode *node2);
+bool isComplete(TreeNode *root, int capacity);
 
 
 
