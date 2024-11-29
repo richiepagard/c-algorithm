@@ -128,6 +128,18 @@ int identical(TreeNode *node1, TreeNode *node2) {
 }
 
 bool isComplete(TreeNode *root, int capacity) {
+    /*  if a tree -binary tree- is complete or not
+
+        @root: pointer to the root node of the tree
+        @capacity: the maximum capacity of the queue used for the level-order traversal
+
+        a complete binary tree is one in which all levels are fully filled except possibly the last,
+        and the nodes in the last level are as far left as possible. return true
+        if the tree is complete; otherwise, return false.
+    */
+
+    if(root == NULL) return true;   // because an empty tree is considered complete
+
 	Queue *q = initializeQueue(capacity);
 	enqueue(q, root);
 
@@ -162,6 +174,27 @@ bool isComplete(TreeNode *root, int capacity) {
 	free(q->data);
 	free(q);
 	return true;
+}
+
+int findLevel(TreeNode *node, int data, int level) {
+    /*  find the level of a node with the specified data
+
+        @node: pointer to the current node being visited
+        @data: the value to search for in the tree
+        @level: the current level of the node being visited -starts at 1 for the root node-
+    */
+
+    int current;
+
+    if(node == NULL) return 0;
+    if(node->data == data) return level;    // return current level if the data matches
+
+    // recursively search in the left and right subtree, increasing the level by 1
+    current = findLevel(node->left, data, level+1);
+    if(current != 0) return current;
+    current = findLevel(node->right, data, level+1);
+
+    return current;
 }
 
 

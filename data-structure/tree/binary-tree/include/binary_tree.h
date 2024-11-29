@@ -23,6 +23,7 @@ unsigned int nodesQuantity(TreeNode *node);
 
 int identical(TreeNode *node1, TreeNode *node2);
 bool isComplete(TreeNode *root, int capacity);
+int findLevel(TreeNode *node, int data, int level);
 
 
 
