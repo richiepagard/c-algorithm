@@ -197,6 +197,20 @@ int findLevel(TreeNode *node, int data, int level) {
     return current;
 }
 
+bool ancestors(TreeNode *node, int data) {
+    if(node == NULL) return false;  // return false for an empty tree or when the target node isn't found
+    if(node->data == data) return true; // return true, if the target found
+
+    // check recursively in the left and right subtree for the target node
+    if(ancestors(node->left, data) || ancestors(node->right, data))
+    {
+        printf("\n %d ", node->data);   // print the current node as it is an ancestor
+        return true;
+    }
+
+    return false;   // target node not found in either subtree
+}
+
 
 void deleteTree(TreeNode **node) {
     /*  delete all nodes in the binary tree, delete the whole tree
