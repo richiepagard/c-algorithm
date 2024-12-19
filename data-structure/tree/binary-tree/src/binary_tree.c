@@ -211,6 +211,39 @@ bool ancestors(TreeNode *node, int data) {
     return false;   // target node not found in either subtree
 }
 
+TreeNode *LCA(TreeNode *root, int x, bool x_flag, int y, bool y_flag) {
+    if(root == NULL) return NULL;
+
+    /*  check if root's data equal to the `x` or `y`, then update the flag of themself to true and return root node,
+        because when we want to find the Lowest Common Ancestor of a node with root node, the ancestor is root :/
+    */
+    if(root->data == x) {
+        x_flag = true;
+        return root;
+    }
+    if(root->data == y) {
+        y_flag = true;
+        return root;
+    }
+
+    TreeNode *leftLCA, *rightLCA;   // initial left and right pointers for check the left and right child nodes
+    // recursively search in the left and right subtree
+    leftLCA = LCA(root->left, x, x_flag, y, y_flag);
+    rightLCA = LCA(root->right, x, x_flag, y, y_flag);
+    if(leftLCA && rightLCA) return root;
+
+    // return leftLCA if it's exists, otherwise, return rightLCA
+    return (leftLCA != NULL) ? leftLCA : rightLCA;
+}
+
+TreeNode *LCAWitchDefault(TreeNode *root, int x, int y) {
+    /*  this is a wrapper function for set default values of flag of x and flag of y 
+        and maybe some another default settings
+    */
+
+    return LCA(root, x, false, y, false);
+}
+
 
 void deleteTree(TreeNode **node) {
     /*  delete all nodes in the binary tree, delete the whole tree

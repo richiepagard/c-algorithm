@@ -25,6 +25,8 @@ int identical(TreeNode *node1, TreeNode *node2);
 bool isComplete(TreeNode *root, int capacity);
 int findLevel(TreeNode *node, int data, int level);
 bool ancestors(TreeNode *node, int data);
+TreeNode *LCA(TreeNode *root, int x, bool x_flag, int y, bool y_flag);
+TreeNode *LCAWitchDefault(TreeNode *root, int x, int y);
 
 
 
