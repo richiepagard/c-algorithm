@@ -244,6 +244,19 @@ TreeNode *LCAWitchDefault(TreeNode *root, int x, int y) {
     return LCA(root, x, false, y, false);
 }
 
+TreeNode *leftMost(TreeNode *root) {
+	/*	this function find and return the most left node
+		from a tree, start from root and find the last left node
+	*/
+	TreeNode *current = root;
+
+	if(root == NULL) return NULL;
+
+	while(current->left != NULL) current = current->left;
+
+	return current;
+}
+
 
 void deleteTree(TreeNode **node) {
     /*  delete all nodes in the binary tree, delete the whole tree
