@@ -27,6 +27,7 @@ int findLevel(TreeNode *node, int data, int level);
 bool ancestors(TreeNode *node, int data);
 TreeNode *LCA(TreeNode *root, int x, bool x_flag, int y, bool y_flag);
 TreeNode *LCAWitchDefault(TreeNode *root, int x, int y);
+TreeNode *leftMost(TreeNode *root);
 
 
 
