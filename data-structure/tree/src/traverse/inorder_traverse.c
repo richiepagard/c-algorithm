@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "../../include/traverse.h"
-#include "../../include/stack.h"
+#include "../include/traverse.h"
+#include "../include/stack.h"
 
 
 void inorderIterator(TreeNode *root) {
@@ -29,6 +29,7 @@ void inorderIterator(TreeNode *root) {
             current = current->right;   // move the right child
         }
     }
+    printf("\n");
 }
 
 void inorderRecursive(TreeNode *node) {

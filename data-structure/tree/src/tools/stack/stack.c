@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "../../include/stack.h"
+#include "../../../include/stack.h"
 
 
 StackNode *initializeStackNode(TreeNode *tree_node) {
