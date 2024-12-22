@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../../include/binary_tree.h"
-#include "../../include/queue.h"
+#include "../../../include/binary_tree.h"
+#include "../../../include/queue.h"
 
 
 Queue *initializeQueue(int capacity) {

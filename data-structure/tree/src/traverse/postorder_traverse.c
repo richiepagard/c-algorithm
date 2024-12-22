@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "../../include/traverse.h"
-#include "../../include/stack.h"
+#include "../include/traverse.h"
+#include "../include/stack.h"
 
 
 void postorderIterator(TreeNode *root) {
