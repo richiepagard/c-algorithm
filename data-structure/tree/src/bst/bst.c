@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "../include/binary_tree.h"
 
@@ -39,4 +40,17 @@ TreeNode* insertBSTIterator(TreeNode* root, int value) {
 	else parent->right = new_node;
 
 	return root;
+}
+
+bool searchNodeBST(TreeNode* root, int key) {
+	TreeNode* current = root;
+
+	while(current != NULL)
+	{
+		if(key < current->data) current = current->left;
+		else if(key > current->data) current = current->right;
+		else return true;
+	}
+
+	return false;
 }
