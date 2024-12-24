@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "../include/binary_tree.h"
 #include "../include/bst.h"
@@ -29,7 +30,7 @@ void run_bst_example() {
 
 	root_node->right->left = initializeTreeNode(20);	// create a left child for the right node
 	
-	insertBSTIterator(root_node, 9);	// insert a new node with value 9
+	insertBST(root_node, 9);	// insert a new node with value 9
 
 	printf("\nInorder traverse on BST (ITERATOR): \n");
 	inorderIterator(root_node);
