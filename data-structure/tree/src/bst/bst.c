@@ -5,21 +5,21 @@
 #include "../include/binary_tree.h"
 
 
-TreeNode* insertBST(TreeNode* root, int value) {
+TreeNode* insertBSTRecursive(TreeNode* root, int value) {
 	if(root == NULL) return initializeTreeNode(value);
 	if(value < root->data)
 	{
-		root->left = insertBST(root->left, value);
+		root->left = insertBSTRecursive(root->left, value);
 	}
 	if(value > root->data)
 	{
-		root->right = insertBST(root->right, value);
+		root->right = insertBSTRecursive(root->right, value);
 	}
 
 	return root;
 }
 
-TreeNode* insertBSTIterator(TreeNode* root, int value) {
+TreeNode* insertBST(TreeNode* root, int value) {
 	if(root == NULL) return initializeTreeNode(value);
 
 	TreeNode* current = root;
@@ -40,6 +40,19 @@ TreeNode* insertBSTIterator(TreeNode* root, int value) {
 	else parent->right = new_node;
 
 	return root;
+}
+
+TreeNode* searchNodeBSTRecursive(TreeNode* root, int key) {
+	/*	function look at the special node with the key that provided by funciton and return it,
+
+		check if the root is null or the data of the root is equal to the key provided by function,
+		return root node.
+		check if the key less than root's data, call the function(recursively) for the left node.
+		otherwise, call the function(recursively) for the right node.
+	*/
+	if(root == NULL || root->data == key) return root;
+	if(key < root->data) return searchNodeBSTRecursive(root->left, key);
+	else return searchNodeBSTRecursive(root->right, key);
 }
 
 bool searchNodeBST(TreeNode* root, int key) {
