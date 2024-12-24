@@ -4,6 +4,7 @@
 #include "binary_tree.h"
 
 TreeNode* insertBST(TreeNode* root, int value);
+TreeNode* insertBSTIterator(TreeNode* root, int value);
 
 
 
