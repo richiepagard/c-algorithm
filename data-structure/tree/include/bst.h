@@ -10,6 +10,9 @@ TreeNode* insertBST(TreeNode* root, int value);
 TreeNode* searchNodeBSTRecursive(TreeNode* root, int key);
 bool searchNodeBST(TreeNode* root, int key);
 
+TreeNode* findMin(TreeNode* root);
+TreeNode* deleteNodeBST(TreeNode* root, int key);
+
 
 
 void run_bst_example();

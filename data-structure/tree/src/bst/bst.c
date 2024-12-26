@@ -67,3 +67,48 @@ bool searchNodeBST(TreeNode* root, int key) {
 
 	return false;
 }
+
+
+TreeNode* findMin(TreeNode* root) {
+	/* function to find a minimum value node in the subtree */
+
+	while(root->left != NULL) root = root->left;
+	return root;
+}
+
+TreeNode* deleteNodeBST(TreeNode* root, int key) {
+	if(root == NULL) return root;
+
+	TreeNode* temp;
+
+	// recursively traverse until find the node to be deleted
+	if(key < root->data) root->left = deleteNodeBST(root->left, key);
+	else if(key > root->data) root->right = deleteNodeBST(root->right, key);
+	else
+	{
+		/*	check node with only one or no child, if the node doesn't have left subtree(child),
+			return the whole right subtree and remove the node, otherwise-if node doesn't have right subtree(child)-,
+			then return the whole left subtree and remove the node.
+
+			check for the node has two children, get the inorder successor at first,
+			the smallest node in the right subtree, then copy the inorder successor to the node,
+			then delete the inorder successor recursively.
+		*/
+		if(root->left == NULL) {
+			temp = root->right;	// set the temp to the whole right subtree
+			free(root);
+			return temp;
+		}
+		else if(root->right == NULL) {
+			temp = root->left;	// set the temp to the whole left subtree
+			free(root);
+			return temp;
+		}
+
+		temp = findMin(root->right);	// get the inorder successor, the smallest node in the right subtree
+		root->data = temp->data;	// replace the current node's data to the inorder successor's data
+		root->right = deleteNodeBST(root->right, temp->data);	// delete the inorder successor
+	}
+
+	return root;
+}
