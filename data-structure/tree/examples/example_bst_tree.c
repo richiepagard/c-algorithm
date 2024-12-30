@@ -35,11 +35,10 @@ void run_bst_example() {
 	printf("\nInorder traverse on BST (ITERATOR): \n");
 	inorderIterator(root_node);
 
-	// deleteNodeBST(root_node, 8);
-	// printf("\nInorder traverse on BST (ITERATOR) after deletion action of key `8`: \n");
-	// inorderIterator(root_node);
+	deleteNodeBST(root_node, 8);
+	printf("\nInorder traverse on BST (ITERATOR) after deletion action of key `8`: \n");
+	inorderIterator(root_node);
 
-	TreeNode* predecessor = NULL;
-	TreeNode* successor = NULL;
-	findPredecessorSuccessor(root_node, &predecessor, &successor, 8);
+
+	// call the tool functions here
 }
