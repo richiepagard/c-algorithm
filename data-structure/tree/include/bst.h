@@ -13,6 +13,8 @@ bool searchNodeBST(TreeNode* root, int key);
 TreeNode* findMin(TreeNode* root);
 TreeNode* deleteNodeBST(TreeNode* root, int key);
 
+void findPredecessorSuccessor(TreeNode* root, TreeNode** predecessor, TreeNode** successor, int key);
+
 
 
 void run_bst_example();

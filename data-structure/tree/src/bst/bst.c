@@ -112,3 +112,46 @@ TreeNode* deleteNodeBST(TreeNode* root, int key) {
 
 	return root;
 }
+
+
+void findPredecessorSuccessor(TreeNode* root, TreeNode** predecessor, TreeNode** successor, int key) {
+	TreeNode* temp;
+	if(root == NULL) return;
+
+	if(key == root->data)
+	{
+		/*	traverse on the left subtree if it isn't NULL and find the last right node,
+			traverse on the right subtree if it isn't NULL and find the last left node,
+			at the end, update the predecessor and sucessor to the last left or right node
+			of each left and right subtree.
+		*/
+		if(root->left != NULL) {
+			temp = root->left;
+			while(temp->right) temp = temp->right;
+			*predecessor = temp;
+		}
+		if(root->right != NULL) {
+			temp = root->right;
+			while(temp->left) temp = temp->left;
+			*successor = temp;
+		}
+	}
+	else if(key < root->data)	// check if the key is smaller than root's data
+	{
+		*successor = root;
+		// recursively find the predecessor and successor of the current node(it's in the left subtree)
+		findPredecessorSuccessor(root->left, predecessor, successor, key);
+	}
+	else
+	{
+		*predecessor = root;
+		// recursively find the predecessor and successor of the current node(it's in the left subtree)
+		findPredecessorSuccessor(root->right, predecessor, successor, key);
+	}
+
+	// check if predecessor or successor are not NULL, print the data, otherwise, print -1
+	printf("Predecessor is %d\tSuccessor is %d\n",
+		(*predecessor ? (*predecessor)->data : -1),
+		(*successor ? (*successor)->data : -1)
+	);
+}
