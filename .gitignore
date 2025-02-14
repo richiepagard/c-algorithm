@@ -32,3 +32,6 @@ obj/
 # Ignore backup files
 *~
 
+# ignore local files
+reminder.md
+
