@@ -35,4 +35,3 @@ There are many diiferent ways to contribute to this repository, actually because
 
 ### **Challenges And Problems**
 I'm pushing some of the problems I've solved, including popular problems and challenges from websites like *LeetCode and HackerRank* in [problems](https://github.com/r-pagard/c-algorithm/tree/main/problems) .
-
