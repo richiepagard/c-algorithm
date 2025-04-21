@@ -77,7 +77,7 @@ void isPalindrome(char *s) {
 
 	// Remove all spaces from the coppied string
     removeSpaces(copy);
-	// Convert all uppercase to lowercase
+	// Convert all uppercase letters to lowercase
 	lowercaseConvertor(copy);
 
     printf("After Modified: \"%s\"\n", copy);
