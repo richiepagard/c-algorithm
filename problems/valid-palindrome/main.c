@@ -47,10 +47,24 @@ void stringCopy(char *copied_str, char *main_str) {
 	}
 }
 
+void lowercaseConvertor(char *string) {
+	/*
+	 * Converts all uppercase letters in the given string to lowercase.
+	 * The input string is modified in-place.
+	*/
+
+	// Iterate through each character in in the string
+	for(int i = 0; i < stringLength(string); ++i)
+	{
+		// If the character is an uppercase letter, convert it to lowercase
+		if(string[i] >= 'A' && string[i] <= 'Z') string[i] = string[i] + 'a' - 'A';
+	}
+}
+
 void isPalindrome(char *s) {
 	int string_length = stringLength(s);
 
-	// Allocate memory for a midifiable copy(+1 for null-terminate)
+	// Allocate memory for a modifiable copy(+1 for null-terminate)
 	char *copy = malloc(string_length + 1);
 	if(!copy) return;
 
@@ -59,12 +73,14 @@ void isPalindrome(char *s) {
 
 	int result_string_length = stringLength(copy);
 
-	printf("Before removing spaces: \"%s\" (len: %d)\n", copy, result_string_length);
+	printf("Before Modified: \"%s\" (len: %d)\n", copy, result_string_length);
 
 	// Remove all spaces from the coppied string
     removeSpaces(copy);
+	// Convert all uppercase to lowercase
+	lowercaseConvertor(copy);
 
-    printf("After removing spaces: \"%s\"\n", copy);
+    printf("After Modified: \"%s\"\n", copy);
 
 	// Free the dynamically allocated buffer
 	free(copy);
