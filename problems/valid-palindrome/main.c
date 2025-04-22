@@ -38,13 +38,19 @@ int stringLength(char *string) {
 }
 
 void stringCopy(char *copied_str, char *main_str) {
-	int i = 0;
+	int i = 0, j = 0;
 
-	// Copy the characters one by one until the null-terminate
+	// Copy only ascii letters (a-z, A-Z) one by one until the null-terminate is reached
 	while(main_str[i] != '\0') {
-		copied_str[i] = main_str[i];
+		char character = main_str[i];
+
+		if( (character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z') ) {
+			copied_str[j++] = character;
+		}
 		i++;
 	}
+
+	copied_str[j] = '\0';
 }
 
 void lowercaseConvertor(char *string) {
