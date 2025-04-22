@@ -3,29 +3,20 @@
 #include <stdbool.h>
 
 
-void isPalindrome(char *s);
+bool isPalindrome(char *s);
 
 int main() {
-	isPalindrome("A man, a plan, a canal: Panama");
+	bool is_palindrome = isPalindrome("A man, a plan, a canal: Panama");
+
+	if(is_palindrome) printf("The string is palindrome.\n");
+	else printf("The string isn't palindrome.\n");
+
+	// Problem link on Leetcode
+	char *problem_link = "https://leetcode.com/problems/valid-palindrome/description/?envType=study-plan-v2&envId=top-interview-150";
 
 	return 0;
 }
 
-
-void removeSpaces(char *string) {
-	int i = 0, j = 0;
-
-	// Iterate through each character of the string
-	while(string[i] != '\0')
-	{
-		// Copy non-space characters to the new position
-		if(string[i] != ' ') string[j++] = string[i];
-		i++;
-	}
-
-	// Null-terminate the resulting string
-	string[j] = '\0';
-}
 
 int stringLength(char *string) {
 	int counter = 0;
@@ -44,50 +35,51 @@ void stringCopy(char *copied_str, char *main_str) {
 	while(main_str[i] != '\0') {
 		char character = main_str[i];
 
-		if( (character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z') ) {
+		if(
+			(character >= 'a' && character <= 'z') ||
+			(character >= 'A' && character <= 'Z') ||
+			(character >= '0' && character <= '9')
+		)
+		{
+			// Convert uppercase letters to lowercase
+			if(character >= 'A' && character <= 'Z') character = character + 'a' - 'A';
+
 			copied_str[j++] = character;
 		}
 		i++;
 	}
 
 	copied_str[j] = '\0';
+
+	printf("%s\n", copied_str);
 }
 
-void lowercaseConvertor(char *string) {
-	/*
-	 * Converts all uppercase letters in the given string to lowercase.
-	 * The input string is modified in-place.
-	*/
-
-	// Iterate through each character in in the string
-	for(int i = 0; i < stringLength(string); ++i)
-	{
-		// If the character is an uppercase letter, convert it to lowercase
-		if(string[i] >= 'A' && string[i] <= 'Z') string[i] = string[i] + 'a' - 'A';
-	}
-}
-
-void isPalindrome(char *s) {
+bool isPalindrome(char *s) {
 	int string_length = stringLength(s);
+    int left, right;
 
 	// Allocate memory for a modifiable copy(+1 for null-terminate)
 	char *copy = malloc(string_length + 1);
-	if(!copy) return;
+	if(!copy) return 0;
 
 	// Copy the input string to the buffer
 	stringCopy(copy, s);
 
-	int result_string_length = stringLength(copy);
+	int copy_string_length = stringLength(copy);
+    left = 0;
+    right = copy_string_length - 1;
 
-	printf("Before Modified: \"%s\" (len: %d)\n", copy, result_string_length);
+    while(left <= right)
+    {
+		// Check string for palindrome
+        if(copy[left] != copy[right]) return false;
 
-	// Remove all spaces from the coppied string
-    removeSpaces(copy);
-	// Convert all uppercase letters to lowercase
-	lowercaseConvertor(copy);
-
-    printf("After Modified: \"%s\"\n", copy);
+		left++;
+		right--;
+    }
 
 	// Free the dynamically allocated buffer
 	free(copy);
+
+    return true;
 }
