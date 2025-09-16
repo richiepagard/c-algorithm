@@ -1,25 +1,40 @@
 ## Title of the PR(Pull Request)
 
-### Changes
+## Description
+<!-- Please include a summary of the change and which issue is fixed. -->
+
+---
+
+## Changes
 - ...
 
-### Type of change
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation update (if none of the other options apply)
+---
 
-### Tasks
-- [ ] ...
+## Type of change
+- [ ] Bug fix.
+- [ ] New feature.
+- [ ] Breaking change.
+- [ ] Documentation update.
 
-### Summary
-Please include a summary of change and/or the issue(s) this PR solves.
+## Tasks
+- [ ] Update code/docs/tests as needed
+- [ ] Code changes implemented
+- [ ] Documentation updated
+- [ ] Tests updated/added
+<!-- Other tasks if you had -->
 
-### How has this been tested?
+---
 
-Please describe the tests that you ran to verify your changes. Provide instructions so others can reproduce.
-
+## How has this been tested?
 - [ ] Unit tests
 - [ ] Integration tests
 - [ ] Manual testing
+<!-- Other ways if you tested in other an other way -->
 
+---
+
+## Resolved Issues
+#### Closes
+- #
+
+---
