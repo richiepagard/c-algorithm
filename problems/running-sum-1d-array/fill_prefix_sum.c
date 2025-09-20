@@ -4,7 +4,7 @@
 #define NUMS_SIZE 4
 
 
-int* fillPrefixSum(int* nums, int numsSize, int* returnSum);
+int* fill_prefix_sum(int* nums, int numsSize, int* returnSum);
 
 
 int main() {
@@ -13,7 +13,7 @@ int main() {
 	int prefixSize = 0;	// sotore the size of prefix sum array
 	int* prefixSum = NULL;
 
-	prefixSum = fillPrefixSum(nums, numsSize, &prefixSize);
+	prefixSum = fill_prefix_sum(nums, numsSize, &prefixSize);
 	for(int i = 0; i < prefixSize; i++) printf(" %d ", prefixSum[i]);	// print the prefix sum array
 	printf("\n");
 
@@ -23,7 +23,7 @@ int main() {
 }
 
 
-int* fillPrefixSum(int* nums, int numsSize, int* returnSum) {
+int* fill_prefix_sum(int* nums, int numsSize, int* returnSum) {
 	*returnSum = numsSize;	// set the size of the returned array
 
 	int* prefixSum = (int*) malloc(numsSize * sizeof(int));
