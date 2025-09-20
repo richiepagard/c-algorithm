@@ -4,14 +4,14 @@
 #define NUMS_SIZE 6
 
 
-double findMaxAverage(int* nums, int numsSize, int k);
+double find_max_average(int* nums, int numsSize, int k);
 
 
 int main() {
     int windowSize = 4;
     int nums[NUMS_SIZE] = {1, 12, -5, -6, 50, 3};
 
-    double result = findMaxAverage(nums, NUMS_SIZE, windowSize);
+    double result = find_max_average(nums, NUMS_SIZE, windowSize);
 
     printf("Max Sum Of The Array: %f\n", result);
 
@@ -19,7 +19,7 @@ int main() {
 }
 
 
-double findMaxAverage(int* nums, int numsSize, int k) {
+double find_max_average(int* nums, int numsSize, int k) {
 	/*	function to find the maximum average of any subarray of size `k` in an array
 	*/
 

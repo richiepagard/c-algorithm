@@ -8,17 +8,17 @@ typedef struct node {
     struct node *next;
 } Node;
 
-Node *initialNode(int value);
-void initialCircularLinkedList(Node **head, unsigned capacity);
-void displayList(Node **head);
+Node *initial_node(int value);
+void initial_circular_linked_list(Node **head, unsigned capacity);
+void display_list(Node **head);
 
 int josephus_problem(Node **head);
 
 
 int main() {
     Node *head = NULL;
-    initialCircularLinkedList(&head, 41);
-    // displayList(&head);  // uncomment it if you need to display the list
+    initial_circular_linked_list(&head, 41);
+    // display_list(&head);  // uncomment it if you need to display the list
 
     printf("The servivor's spot on: %d\n", josephus_problem(&head));
 
@@ -26,7 +26,7 @@ int main() {
 }
 
 
-Node *initialNode(int value) {
+Node *initial_node(int value) {
     /*  initializes(create) and returns a new node with the specified value provided by function.
 
         @value: integer, the value to set as `data` in the new node.
@@ -47,7 +47,7 @@ Node *initialNode(int value) {
     }
 }
 
-void initialCircularLinkedList(Node **head, unsigned capacity) {
+void initial_circular_linked_list(Node **head, unsigned capacity) {
     /*  initialize(create) a circular linked list with a specified number of nodes
     
         @head: a pointer to the head pointer of the list, which will point to the first node
@@ -59,12 +59,12 @@ void initialCircularLinkedList(Node **head, unsigned capacity) {
     
     Node *current;
 
-    *head = initialNode(1);
+    *head = initial_node(1);
     current = *head;
 
     for(int i = 2; i <= capacity; i++)  // create and link nodes from 2 up to `capacity`
     {
-        current->next = initialNode(i); // initial(create) a new node with valuue `i` and link it to the `current` node
+        current->next = initial_node(i); // initial(create) a new node with valuue `i` and link it to the `current` node
         current = current->next;    // move the current until it reaches the last node(a node with a value equal to capacity)
     }
 
@@ -101,7 +101,7 @@ int josephus_problem(Node **head) {
 }
 
 
-void displayList(Node **head) {
+void display_list(Node **head) {
 	if(*head == NULL)
     {
         printf("\nThe List Is Empty !\n");
