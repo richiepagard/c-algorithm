@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int recursiveCombination(int n, int m);
+int recursive_combination(int n, int m);
 
 
 int main() {
-	printf("%d\n", recursiveCombination(5, 3));
+	printf("%d\n", recursive_combination(5, 3));
 
 	return 0;
 }
 
-int recursiveCombination(int n, int m) {
+int recursive_combination(int n, int m) {
 	/*
 	    Binomial Coefficient Formula:
 
@@ -42,7 +42,7 @@ int recursiveCombination(int n, int m) {
 	if( (n == m) || (m == 0) ) return 1;
 	else
 	{
-		return recursiveCombination(n-1, m) + recursiveCombination(n-1, m-1);
+		return recursive_combination(n-1, m) + recursive_combination(n-1, m-1);
 	}
 
 }
