@@ -2,21 +2,21 @@
 #include <stdlib.h>
 #include <math.h>
 
-int recursiveAckerman(int n, int m);
+int recursive_ackerman(int n, int m);
 
 
 int main() {
 	printf("\n");
-	printf("%d\t", recursiveAckerman(1, 1));
-	printf("%d\t", recursiveAckerman(2, 5));
-	printf("%d\t", recursiveAckerman(3, 2));
-	printf("%d\n\n", recursiveAckerman(4, 1));
+	printf("%d\t", recursive_ackerman(1, 1));
+	printf("%d\t", recursive_ackerman(2, 5));
+	printf("%d\t", recursive_ackerman(3, 2));
+	printf("%d\n\n", recursive_ackerman(4, 1));
 
 	return 0;
 }
 
 
-int recursiveAckerman(int n, int m) {
+int recursive_ackerman(int n, int m) {
 	/*
 		Recursive Ackerman Formula:
 		The Ackermann function is a recursive function with deep theoretical significance due to its fast-growing nature.
@@ -48,6 +48,7 @@ int recursiveAckerman(int n, int m) {
 			- A(3, n) = 2^(m + 3) - 3
 			- A(4, n) = 2^(2^(m + 3)) - 3
 	*/
+	int result;
 
 	// simplified expressions for small `n` values
 	switch(n)
@@ -60,6 +61,13 @@ int recursiveAckerman(int n, int m) {
 	}
 
 	// base conditions
-	if(m == 0)	return recursiveAckerman(n -= 1, m = 1);
-	else if(n > 0 && m > 0) return recursiveAckerman( n -= 1, recursiveAckerman(n, m -= 1) );
+	result = 0;
+	if(m == 0)	{
+		result = recursive_ackerman(n -= 1, m = 1);
+		return result;
+	}
+	else if(n > 0 && m > 0) {
+		result = recursive_ackerman( n -= 1, recursive_ackerman(n, m -= 1) );
+		return result;
+	}
 }
