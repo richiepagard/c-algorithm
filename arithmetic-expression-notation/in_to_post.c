@@ -5,32 +5,32 @@
 #include "expression_notation.h"
 
 
-int infixToPostfix(char *expression) {
+int infix_to_postfix(char *expression) {
 	int i, k;
 
 	Stack *st;
 	st = initial(strlen(expression));	// initialize the stack by length of expression
 
-	if(!st) return -1;
-	for(i = 0, k = -1; expression[i]; ++i)
+	if (!st) return -1;
+	for (i = 0, k = -1; expression[i]; ++i)
 	{
-		/* check all the characters of the expression in the loop  
-		 * `k` increase when the character is operand*/
-
-		if(isOperand(expression[i])) expression[++k] = expression[i];
-		else if(expression[i] == '(') push(st, expression[i]);
-		else if(expression[i] == ')')
-		{
+		// check all the characters of the expression in the loop  
+		// `k` increase when the character is operand
+		if (is_operand(expression[i])) expression[++k] = expression[i];
+		else if ( expression[i] == '(' ) push(st, expression[i]);
+		else if ( expression[i] == ')' ) {
 			// while the Stack is empty and the top operator item isn't `(`, pop the items
-			while(!isEmpty(st) && peek(st) != '(') expression[++k] = pop(st);
-			if(!isEmpty(st) && peek(st) != '(') return -1;
+			while ( !is_empty(st) && peek(st) != '(' ) {
+				expression[++k] = pop(st);
+			}
+			if ( !is_empty(st) && peek(st) != '(' ) {
+				return -1;
+			}
 			else pop(st);	// pop the `(` and don't push it to the output expression
 		}
-		else
-		{
+		else {
 			/* check the operators  */
-
-			while( !isEmpty(st) && precedence(expression[i]) <= precedence(peek(st)) )
+			while ( !is_empty(st) && precedence(expression[i]) <= precedence(peek(st)) )
 			{
 				/* if the priority of the current operator character is less than the
 				 *  top item(top operator character) of the Stack, then pop it off the Stack. Otherwise,
@@ -40,8 +40,11 @@ int infixToPostfix(char *expression) {
 			push(st, expression[i]);	// push the operator character to the stack
 		}
 	}
-	while(!isEmpty(st)) expression[++k] = pop(st);
+
+	while (!is_empty(st)) {
+		expression[++k] = pop(st);
+	}
+
 	expression[++k] = '\0';	// Null-terminate the expression string
 	printf("%s\n", expression);
 }
-
