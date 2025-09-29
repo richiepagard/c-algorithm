@@ -9,15 +9,14 @@ typedef struct stack {
 
 Stack *initial(unsigned capacity);
 
-int isEmpty(Stack *st);
+int is_empty(Stack *st);
 int peek(Stack *st);
 char pop(Stack *st);
 void push(Stack *st, char op);
 
-int isOperand(char character);
+int is_operand(char character);
 int precedence(char character);
 
-int infixToPostfix(char *expression);
+int infix_to_postfix(char *expression);
 
 #endif // EXPRESSION_NOTATION
-

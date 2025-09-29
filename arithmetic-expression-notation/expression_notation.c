@@ -20,7 +20,7 @@ Stack *initial(unsigned capacity) {
 	return st;
 }
 
-int isEmpty(Stack *st) {
+int is_empty(Stack *st) {
 	return st->top == -1;
 }
 
@@ -30,7 +30,7 @@ int peek(Stack *st) {
 
 char pop(Stack *st) {
 	/* remove the top item of the stack  */
-	if(!isEmpty(st)) return st->items[st->top--];
+	if(!is_empty(st)) return st->items[st->top--];
 	return '$';	// if the stack is empty, return a `$`
 }
 
@@ -39,7 +39,7 @@ void push(Stack *st, char op) {
 	st->items[++st->top] = op;
 }
 
-int isOperand(char character) {
+int is_operand(char character) {
 	/* check if the character is alpha, return True, otherwise, return False  */
 	return (character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z');
 }
@@ -55,4 +55,3 @@ int precedence(char character) {
 	}
 	return -1;
 }
-

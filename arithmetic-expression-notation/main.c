@@ -6,8 +6,7 @@
 
 int main() {
 	char ex[] = "a+b/(c*d+e)-f^g";
-	infixToPostfix(ex);
+	infix_to_postfix(ex);
 
 	return 0;
 }
-
