@@ -7,11 +7,11 @@ typedef struct stack {
     int top;
 } Stack;
 
-Stack *initialStack(int length);
-void freeStack(Stack *st);
+Stack *init_stack(int length);
+void free_stack(Stack *st);
 
-int isFull(Stack *st);
-int isEmpty(Stack *st);
+int is_full(Stack *st);
+int is_empty(Stack *st);
 void push(Stack *st, int number);
 int pop(Stack *st);
 int peek(Stack *st);

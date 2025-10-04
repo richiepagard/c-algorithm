@@ -4,7 +4,7 @@
 #include "include/stack.h"
 
 
-Stack *initialStack(int length) {
+Stack *init_stack(int length) {
     Stack *st;
 
     st = (Stack*) malloc(sizeof(Stack));
@@ -19,18 +19,18 @@ Stack *initialStack(int length) {
     return st;
 }
 
-void freeStack(Stack *st) {
+void free_stack(Stack *st) {
     /* Free the items array and the stack structure itself */
     free(st->items);
     free(st);
 }
 
-int isFull(Stack *st) {
+int is_full(Stack *st) {
     if(st->top == 9) return 1;
     else return 0;
 }
 
-int isEmpty(Stack *st) {
+int is_empty(Stack *st) {
     if(st->top == -1) return 1;
     else return 0;
 }
@@ -41,7 +41,7 @@ int peek(Stack *st) {
 }
 
 void push(Stack *st, int number) {
-    if(isFull(st)) printf("The Stack is full...\n");
+    if(is_full(st)) printf("The Stack is full...\n");
     else
     {
         st->top++;
@@ -52,7 +52,7 @@ void push(Stack *st, int number) {
 int pop(Stack *st) {
 	int item;
 
-    if(isEmpty(st)) printf("\nThe Stack is empty...\n");
+    if(is_empty(st)) printf("\nThe Stack is empty...\n");
     else
 	{
 		item = st->items[st->top];

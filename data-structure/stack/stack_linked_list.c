@@ -5,7 +5,7 @@
 #include "include/stack_linked_list.h"
 
 
-Node *initialNodeSingly(int value) {
+Node *init_node_singly(int value) {
     /* initial (create) a new node */
     Node *new_node = (Node*) malloc(sizeof(Node));
 
@@ -19,7 +19,7 @@ Node *initialNodeSingly(int value) {
     }
 }
 
-StackLinkedList *initialStackLinkedList() {
+StackLinkedList *init_stack_linked_list() {
 	/* initial (create) a new stack with singly linked list  */
 	StackLinkedList *st;
 	st = (StackLinkedList*) malloc(sizeof(StackLinkedList));	// allocate the memory to the new stack
@@ -28,17 +28,17 @@ StackLinkedList *initialStackLinkedList() {
 }
 
 
-int isEmptyStackLL(StackLinkedList *st) {
+int is_empty_stack_linked_list(StackLinkedList *st) {
 	/*	StackLL = Stack Linked List
 		Check if the stack is empty or not!
 	*/
 	return st->top == NULL;
 }
 
-int peekLinkedList(StackLinkedList *st) {
+int peek_linked_list(StackLinkedList *st) {
 	/* return the top element(node) of the stack */
 	
-	if(!isEmptyStackLL(st)) return st->top->data;
+	if(!is_empty_stack_linked_list(st)) return st->top->data;
 	else
 	{
 		printf("Stack Is Empty...\n");
@@ -46,11 +46,10 @@ int peekLinkedList(StackLinkedList *st) {
 	}
 }
 
-
-void pushLinkedList(StackLinkedList *st, int value) {
+void push_linked_list(StackLinkedList *st, int value) {
 	/* push a new node to the top of the stack */
 	
-	Node *new_node = initialNodeSingly(value);
+	Node *new_node = init_node_singly(value);
 
 	if(!new_node)
 	{
@@ -62,10 +61,10 @@ void pushLinkedList(StackLinkedList *st, int value) {
 	st->top = new_node;	// update the top node to the new node
 }
 
-void popLinkedList(StackLinkedList *st) {
+void pop_linked_list(StackLinkedList *st) {
 	/* pop (delete) the top node of the stack and deallocate the memory of the node */
 	
-	if(isEmptyStackLL(st))
+	if(is_empty_stack_linked_list(st))
 	{
 		printf("Stack Underflow...\n");
 		return;

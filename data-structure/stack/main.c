@@ -7,14 +7,14 @@
 
 int main() {
     Stack *st;
-    st = initialStack(5);
+    st = init_stack(5);
     push(st, 1);
     push(st, 2);
     push(st, 3);
 
     pop(st);
 
-    if(isEmpty(st)) printf("\nThe Stack is empty...\n");
+    if(is_empty(st)) printf("\nThe Stack is empty...\n");
     else
     {
         printf("Elements: \n");
@@ -27,18 +27,18 @@ int main() {
     int top = peek(st);
     printf("The top item: %d\n", top);
 
-	freeStack(st);
+	free_stack(st);
 
 	StackLinkedList *stack_ll;
-    stack_ll = initialStackLinkedList();
+    stack_ll = init_stack_linked_list();
 
-    pushLinkedList(stack_ll, 3);
-    pushLinkedList(stack_ll, 6);
-    pushLinkedList(stack_ll, 9);
-    printf("The top item of the stack linked list: %d\n", peekLinkedList(stack_ll));
+    push_linked_list(stack_ll, 3);
+    push_linked_list(stack_ll, 6);
+    push_linked_list(stack_ll, 9);
+    printf("The top item of the stack linked list: %d\n", peek_linked_list(stack_ll));
 
-    popLinkedList(stack_ll);
-    printf("The top item of the stack linked list after deletion: %d\n", peekLinkedList(stack_ll));
+    pop_linked_list(stack_ll);
+    printf("The top item of the stack linked list after deletion: %d\n", peek_linked_list(stack_ll));
 
     free(stack_ll);
 

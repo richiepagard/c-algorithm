@@ -12,13 +12,13 @@ typedef struct stack_linked_list {
 	Node *top;
 } StackLinkedList;
 
-Node *initialNodeSingly(int value);
-StackLinkedList *initialStackLinkedList();
+Node *init_node_singly(int value);
+StackLinkedList *init_stack_linked_list();
 
-void pushLinkedList(StackLinkedList *st, int value);
-void popLinkedList(StackLinkedList *st);
+void push_linked_list(StackLinkedList *st, int value);
+void pop_linked_list(StackLinkedList *st);
 
-int isEmptyStackLL(StackLinkedList *st);
-int peekLinkedList(StackLinkedList *st);
+int is_empty_stack_linked_list(StackLinkedList *st);
+int peek_linked_list(StackLinkedList *st);
 
 #endif
