@@ -37,7 +37,7 @@ int main() {
     push_linked_list(stack_ll, 9);
     printf("The top item of the stack linked list: %d\n", peek_linked_list(stack_ll));
 
-    popLinkedList(stack_ll);
+    pop_linked_list(stack_ll);
     printf("The top item of the stack linked list after deletion: %d\n", peek_linked_list(stack_ll));
 
     free(stack_ll);
