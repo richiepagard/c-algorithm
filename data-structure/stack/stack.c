@@ -4,7 +4,7 @@
 #include "include/stack.h"
 
 
-Stack *initial_stack(int length) {
+Stack *init_stack(int length) {
     Stack *st;
 
     st = (Stack*) malloc(sizeof(Stack));
