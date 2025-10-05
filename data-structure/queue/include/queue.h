@@ -10,10 +10,10 @@ typedef struct queue {
     unsigned capacity;
 } RegularQueue;
 
-int isFull(RegularQueue *q);
-int isEmpty(RegularQueue *q);
+int is_full(RegularQueue *q);
+int is_empty(RegularQueue *q);
 
-RegularQueue *initialRegular(unsigned capacity);
+RegularQueue *init_regular_queue(unsigned capacity);
 void enqueue(RegularQueue *q, int item);
 int dequeue(RegularQueue *q);
 
@@ -27,9 +27,9 @@ typedef struct circularQueue {
 } CircularQueue;
 
 
-CircularQueue *initialCicular(unsigned capacity);
-void enqueueCicular(CircularQueue *q, int item);
-int dequeueCicular(CircularQueue *q);
+CircularQueue *init_circular_queue(unsigned capacity);
+void enqueue_circular(CircularQueue *q, int item);
+int dequeue_circular(CircularQueue *q);
 void show(CircularQueue *q);
 
 #endif // QUEUE_H
