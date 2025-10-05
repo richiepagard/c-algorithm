@@ -11,7 +11,7 @@ int main() {
     printf("\nThe Regular Queue Test In Main:\n\n");
 
 	RegularQueue *regularQ;
-	regularQ = initialRegular(5);
+	regularQ = init_regular_queue(5);
 	enqueue(regularQ, 1);
 	enqueue(regularQ, 3);
 
@@ -29,15 +29,15 @@ int main() {
     printf("\nThe Circular Queue Test In Main:\n\n");
 
     CircularQueue *circularQ;
-	circularQ = initialCicular(4);
-	enqueueCicular(circularQ, 3);
-	enqueueCicular(circularQ, 6);
-	enqueueCicular(circularQ, 9);
+	circularQ = init_circular_queue(4);
+	enqueue_circular(circularQ, 3);
+	enqueue_circular(circularQ, 6);
+	enqueue_circular(circularQ, 9);
 	printf("\tBefore Deletion Action:");
 	show(circularQ);
 
 	printf("\n\n\tAfter Deletion Action:");
-	int item = dequeueCicular(circularQ);
+	int item = dequeue_circular(circularQ);
 	show(circularQ);
 	printf("\n\n");
 
@@ -48,15 +48,15 @@ int main() {
 	printf("\nThe Regular Queue Linked List, Test In Main:\n\n");
 
 	RegularQueueLinkedList *regularQLL;	// initialize a new Regular Queue Linked List
-	regularQLL = initialRegularQueueLinkedList(4);
-	enqueueLinkedList(regularQLL, 7);
-	enqueueLinkedList(regularQLL, 9);
-	enqueueLinkedList(regularQLL, 2);
-	printf("\tThe Front Of Queue: %d\n", getFront(regularQLL));
-	printf("\tThe Rear Of Queue: %d\n", getRear(regularQLL));
+	regularQLL = init_regular_queue_linked_list(4);
+	enqueue_linked_list(regularQLL, 7);
+	enqueue_linked_list(regularQLL, 9);
+	enqueue_linked_list(regularQLL, 2);
+	printf("\tThe Front Of Queue: %d\n", get_front(regularQLL));
+	printf("\tThe Rear Of Queue: %d\n", get_rear(regularQLL));
 
-	dequeueLinkedList(regularQLL);
-	printf("\n\tThe Front Of Queue After Deletion: %d\n", getFront(regularQLL));
+	dequeue_linked_list(regularQLL);
+	printf("\n\tThe Front Of Queue After Deletion: %d\n", get_front(regularQLL));
 
 	printf("\n");
 

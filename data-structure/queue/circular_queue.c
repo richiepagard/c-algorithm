@@ -5,7 +5,7 @@
 #include "include/queue.h"
 
 
-CircularQueue *initialCicular(unsigned capacity) {
+CircularQueue *init_circular_queue(unsigned capacity) {
 	CircularQueue *q;
 	q = (CircularQueue*) malloc(sizeof(CircularQueue));
 
@@ -15,7 +15,7 @@ CircularQueue *initialCicular(unsigned capacity) {
 	q->size = capacity;
 }
 
-void enqueueCicular(CircularQueue *q, int item) {
+void enqueue_circular(CircularQueue *q, int item) {
 	if( (q->front == 0 && q->rear == q->size - 1) || (q->rear == q->front - 1) )
 	{
 		printf("\nThe Queue is full.");
@@ -42,7 +42,7 @@ void enqueueCicular(CircularQueue *q, int item) {
 }
 
 
-int dequeueCicular(CircularQueue *q) {
+int dequeue_circular(CircularQueue *q) {
 	int item = q->items[q->front];
 	q->items[q->front] = -1;
 

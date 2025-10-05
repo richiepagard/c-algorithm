@@ -5,7 +5,7 @@
 #include "include/queue_linked_list.h"
 
 
-Node *initialNodeSingly(int value) {
+Node *init_node_singly(int value) {
     /* initial (create) a new node */
     Node *new_node = (Node*) malloc(sizeof(Node));
 
@@ -19,7 +19,7 @@ Node *initialNodeSingly(int value) {
     }
 }
 
-RegularQueueLinkedList *initialRegularQueueLinkedList(unsigned capacity) {
+RegularQueueLinkedList *init_regular_queue_linked_list(unsigned capacity) {
     /* initial (create) a new regular queue with singly linked list */
     RegularQueueLinkedList *q;
     q = (RegularQueueLinkedList*) malloc(sizeof(RegularQueueLinkedList));
@@ -31,7 +31,7 @@ RegularQueueLinkedList *initialRegularQueueLinkedList(unsigned capacity) {
     return q;
 }
 
-int isEmptyRegularQLL(RegularQueueLinkedList *q) {
+int is_empty_regular_queue_linked_list(RegularQueueLinkedList *q) {
     /*  RegularQLL = Regular Queue Linked List 
         Check if the queue is empty or not!
     */
@@ -39,8 +39,8 @@ int isEmptyRegularQLL(RegularQueueLinkedList *q) {
     return 0;
 }
 
-void enqueueLinkedList(RegularQueueLinkedList *q, int item) {
-    Node *new_node = initialNodeSingly(item);    // initialize a new node
+void enqueue_linked_list(RegularQueueLinkedList *q, int item) {
+    Node *new_node = init_node_singly(item);    // initialize a new node
     
     if(q->rear == NULL) {
         /* if queue is empty, the new node is both the front and rear */
@@ -51,12 +51,12 @@ void enqueueLinkedList(RegularQueueLinkedList *q, int item) {
     q->rear = new_node;    // change the rear
 }
 
-void dequeueLinkedList(RegularQueueLinkedList *q) {
+void dequeue_linked_list(RegularQueueLinkedList *q) {
     /* delete the front item of the queue and deallocate the memory of the item */
     
     Node *temp = q->front;
     
-    if(isEmptyRegularQLL(q))
+    if(is_empty_regular_queue_linked_list(q))
     {
         printf("Queue Underflow...\n");
         return;
@@ -69,8 +69,8 @@ void dequeueLinkedList(RegularQueueLinkedList *q) {
     free(temp); // deallocate the memory of the old front node
 }
 
-int getFront(RegularQueueLinkedList *q) {
-    if(isEmptyRegularQLL(q))
+int get_front(RegularQueueLinkedList *q) {
+    if(is_empty_regular_queue_linked_list(q))
     {
         printf("Queue Is Empty...\n");
         return INT_MIN;
@@ -78,8 +78,8 @@ int getFront(RegularQueueLinkedList *q) {
     return q->front->data;
 }
 
-int getRear(RegularQueueLinkedList *q) {
-    if(isEmptyRegularQLL(q))
+int get_rear(RegularQueueLinkedList *q) {
+    if(is_empty_regular_queue_linked_list(q))
     {
         printf("Queue Is Empty...\n");
         return INT_MIN;

@@ -5,7 +5,7 @@
 #include "include/queue.h"
 
 
-RegularQueue *initialRegular(unsigned capacity) {
+RegularQueue *init_regular_queue(unsigned capacity) {
 	RegularQueue *q;
 	q = (RegularQueue*) malloc(sizeof(RegularQueue));
 
@@ -18,13 +18,13 @@ RegularQueue *initialRegular(unsigned capacity) {
 	return q;
 }
 
-int isFull(RegularQueue *q) { return (q->size == q->capacity); }
-int isEmpty(RegularQueue *q) { return (q->size == 0); }
+int is_full(RegularQueue *q) { return (q->size == q->capacity); }
+int is_empty(RegularQueue *q) { return (q->size == 0); }
 
 void enqueue(RegularQueue *q, int item) {
 	int tmp;
 
-	if(isFull(q)) return;
+	if(is_full(q)) return;
 
 	q->rear = (q->rear + 1) % q->capacity;
 	tmp = q->rear;
@@ -37,7 +37,7 @@ void enqueue(RegularQueue *q, int item) {
 int dequeue(RegularQueue *q) {
 	int item, tmp;
 
-	if(isEmpty(q)) return INT_MIN;
+	if(is_empty(q)) return INT_MIN;
 
 	tmp = q->front;
 	item = q->items[tmp];
