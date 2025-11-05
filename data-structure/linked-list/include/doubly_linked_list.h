@@ -7,21 +7,21 @@ typedef struct node_doubly {
 	struct node_doubly *previous;
 } NodeDoubly;
 
-NodeDoubly *initialNodeDoubly(NodeDoubly **head, int value);
+NodeDoubly *init_node_doubly(NodeDoubly **head, int value);
 
-void insertBeginDoubly(NodeDoubly **head, int value);
-void insertLastDoubly(NodeDoubly **head, int value);
-void insertPositionDoubly(NodeDoubly **head, int position, int value);
-void insertAfterNodeDoubly(NodeDoubly *node_position, int value);
+void insert_begin_doubly(NodeDoubly **head, int value);
+void insert_last_doubly(NodeDoubly **head, int value);
+void insert_position_doubly(NodeDoubly **head, int position, int value);
+void insert_after_node_doubly(NodeDoubly *node_position, int value);
 
-void deleteFirstDoubly(NodeDoubly **head);
-void deleteLastDoubly(NodeDoubly **head);
-void deleteNodeByValue(NodeDoubly **head, int value);
-void deleteWholeListDoubly(NodeDoubly **head);
+void delete_first_doubly(NodeDoubly **head);
+void delete_last_doubly(NodeDoubly **head);
+void delete_node_by_value(NodeDoubly **head, int value);
+void delete_whole_list_doubly(NodeDoubly **head);
 
-void reverseListDoubly(NodeDoubly **head);
+void reverse_list_doubly(NodeDoubly **head);
 
-void displayDoubly(NodeDoubly **head);
+void display_doubly(NodeDoubly **head);
 
 
 void run_doubly_linked_list_example();

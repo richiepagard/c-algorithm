@@ -8,27 +8,27 @@ typedef struct node {
     struct node *next;
 } Node;
 
-Node *initialNodeSingly(int value);
+Node *init_node_singly(int value);
 
 // insertion functions
-void insertBeginSingly(Node **head, Node *new_node);
-void insertLastSingly(Node **head, Node *new_node);
-void insertPositionSingly(Node **head, Node *new_node, int position);
+void insert_begin_singly(Node **head, Node *new_node);
+void insert_last_singly(Node **head, Node *new_node);
+void insert_position_singly(Node **head, Node *new_node, int position);
 // deletion functions
-void deleteBeginSingly(Node **head);
-void deleteLastSingly(Node **head);
-void deletePositionSingly(Node **head, int position);
-void deleteWholeListSingly(Node **head);
+void delete_begin_singly(Node **head);
+void delete_last_singly(Node **head);
+void delete_position_singly(Node **head, int position);
+void delete_whole_list_singly(Node **head);
 
-void displaySingly(Node **head);
-void displayReverseSingly(Node **head);
+void display_singly(Node **head);
+void display_reverse_singly(Node **head);
 
-int findMaximumSingly(Node **head);
-int countNodeSingly(Node **head);
-bool searchRecursiveSingly(Node **head, int data);
-int findIndexRecursiveSingly(Node **head, int data);
+int find_maximum_singly(Node **head);
+int count_node_singly(Node **head);
+bool search_recursive_singly(Node **head, int data);
+int find_index_recursive_singly(Node **head, int data);
 
-Node *concatenateTwoListSingly(Node **head1, Node **head2);
+Node *concatenate_two_list_singly(Node **head1, Node **head2);
 
 
 void run_singly_linked_list_example();
