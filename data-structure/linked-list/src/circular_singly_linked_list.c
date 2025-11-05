@@ -4,8 +4,8 @@
 #include "../include/circular_singly_linked_list.h"
 
 
-void insertBeginCircularSingly(NodeCircularSingly **head, int value) {
-	/*	insert a new node at the beginning of the list, if the head is NULL, then 
+void insert_begin_circular_singly(NodeCircularSingly **head, int value) {
+	/*	insert a new node at the beginning of the list, if the head is NULL, then
 		the head update to the new node and new node points to itself; otherwise,
 		traverse until the last node and update the head update to the new node and the last node
 		points to the new node
@@ -34,7 +34,7 @@ void insertBeginCircularSingly(NodeCircularSingly **head, int value) {
 	}
 }
 
-void insertLastCircularSingly(NodeCircularSingly **head, int value) {
+void insert_last_circular_singly(NodeCircularSingly **head, int value) {
 	/*	insert a new node at the end of the list, if the head is NULL(list is empty),
 		then the head node update to the new node and new node points to itself; otherwise,
 		traverse until the last node and the next of current last node points to the new node,
@@ -65,7 +65,7 @@ void insertLastCircularSingly(NodeCircularSingly **head, int value) {
 }
 
 
-void deleteFirstCircularSingly(NodeCircularSingly **head) {
+void delete_first_circular_singly(NodeCircularSingly **head) {
 	if(*head == NULL) return;
 
 	NodeCircularSingly *current = *head;
@@ -85,7 +85,7 @@ void deleteFirstCircularSingly(NodeCircularSingly **head) {
 	free(temp);	// deallocate the memopry(delete) the old head node
 }
 
-void deleteLastCircularSingly(NodeCircularSingly **head) {
+void delete_last_circular_singly(NodeCircularSingly **head) {
 	if(*head == NULL) return;
 
 	NodeCircularSingly *current = *head;
@@ -108,7 +108,7 @@ void deleteLastCircularSingly(NodeCircularSingly **head) {
 	free(current);	// deallocate the memory(delete) the old last node
 }
 
-void deleteWholeListCircularSingly(NodeCircularSingly **head) {
+void delete_whole_list_circular_singly(NodeCircularSingly **head) {
 	/* function for delete the whole list and free the memory. */
 
 	if(*head == NULL) return;
@@ -129,7 +129,7 @@ void deleteWholeListCircularSingly(NodeCircularSingly **head) {
 }
 
 
-void displayCircularSingly(NodeCircularSingly **head) {
+void display_circular_singly(NodeCircularSingly **head) {
 	if(*head == NULL)
     {
         printf("\nThe List Is Empty !\n");
@@ -147,7 +147,7 @@ void displayCircularSingly(NodeCircularSingly **head) {
 }
 
 
-int countNodesCircularSingly(NodeCircularSingly **head) {
+int count_nodes_circular_singly(NodeCircularSingly **head) {
 	/* count the nodes of the list and return the total */
 
 	NodeCircularSingly *temp = *head;
