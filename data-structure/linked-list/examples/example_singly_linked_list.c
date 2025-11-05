@@ -14,34 +14,34 @@ void run_singly_linked_list_example() {
 
     // initialize and insert nodes
     new_node = initialNodeSingly(10);
-    insertLastSingly(&head, new_node);
+    insert_last_singly(&head, new_node);
 
     for(int i = 0; i <= 7; i++)
     {
-        new_node = initialNodeSingly(i);
+        new_node = init_node_singly(i);
         // insertLast(&head, new_node);
-        insertBeginSingly(&head, new_node);
+        insert_begin_singly(&head, new_node);
     }
 
     // display the list
     printf("Initial List: ");
-    displaySingly(&head);
+    display_singly(&head);
     printf("\n");
 
     // insert at beginning and at a position
-    new_node = initialNodeSingly(0);
-    insertBeginSingly(&head, new_node);
-    new_node = initialNodeSingly(100);
-    insertPositionSingly(&head, new_node, 3);
+    new_node = init_node_singly(0);
+    insert_begin_singly(&head, new_node);
+    new_node = init_node_singly(100);
+    insert_position_singly(&head, new_node, 3);
 
     printf("List After Insertions: \n");
-    displaySingly(&head);
+    display_singly(&head);
     printf("\n");
 
     // delete a node by position
-    deletePositionSingly(&head, 2);
+    delete_position_singly(&head, 2);
     printf("List After Deletion at Position 2: \n");
-    displaySingly(&head);
+    display_singly(&head);
     printf("\n");
 
 
@@ -50,8 +50,8 @@ void run_singly_linked_list_example() {
 
 
 	// clean up the list
-    deleteWholeListSingly(&head);
+    delete_whole_list_singly(&head);
     printf("List After Deleting All Nodes:");
-    displaySingly(&head);
+    display_singly(&head);
     printf("\n");
 }
