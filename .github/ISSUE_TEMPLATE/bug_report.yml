@@ -1,0 +1,22 @@
+name: "Bug Report"
+description: "Report a bug or unexpected behavior"
+
+body:
+  - type: textarea
+    id: description
+
+    attributes:
+      label: Description
+      description: |
+        Clearly describe the bug.
+        Include what you were trying to do, what happened,
+        and anything important to understand the issue.
+
+    placeholder: |
+        Example:
+        What I did:
+        What I expected:
+        What actually happened:
+
+    validations:
+      required: true
