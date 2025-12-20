@@ -11,8 +11,7 @@ body:
         Clearly describe the bug.
         Include what you were trying to do, what happened,
         and anything important to understand the issue.
-
-    placeholder: |
+      placeholder: |
         Example:
         What I did:
         What I expected:
