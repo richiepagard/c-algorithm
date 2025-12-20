@@ -1,0 +1,21 @@
+name: "Code Cleanup / Refactor / Docs Improvement"
+description: "Suggest or track code cleanup, refactoring, reorganizing modules, or improving documentation"
+
+body:
+  - type: textarea
+    id: description
+
+    attributes:
+      label: Description
+      description: |
+        Describe what needs cleanup, refactoring, reorganization, or documentation improvement.
+        Briefly explain the problem and the benefit of fixing it.
+      placeholder: |
+        Example:
+        Location / Area:
+        Current issue:
+        Suggested improvement:
+        Expected benefit:
+
+    validations:
+      required: true
