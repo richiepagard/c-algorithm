@@ -1,0 +1,50 @@
+name: "Algorithm Proposal / Enhancement"
+description: "Suggest a new algorithm/data structure or propose improving an existing one"
+
+body:
+  - type: input
+    id: algorithm_name
+    attributes:
+      label: Algorithm / Data Structure Name
+      description: Example: QuickSort, Binary Search Tree, Dijkstra
+      placeholder: Name of the algorithm or data structure
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Brief explanation of the algorithm or improvement idea
+      placeholder: Explain what it does and why it's useful
+    validations:
+      required: true
+
+  - type: textarea
+    id: io
+    attributes:
+      label: Expected Input / Output
+      description: Provide an example input and expected output
+      placeholder: |
+        Input:
+        Output:
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References (optional)
+      description: Books, papers, or links if applicable
+      placeholder: Optional but helpful resources
+    validations:
+      required: false
+
+  - type: textarea
+    id: complexity
+    attributes:
+      label: Complexity Target (optional)
+      description: Desired time/space complexity or performance expectations
+      placeholder: Example: O(n log n) time, O(n) space
+    validations:
+      required: false
