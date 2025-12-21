@@ -4,7 +4,7 @@
 #include "../include/circular_doubly_linked_list.h"
 
 
-NodeCircularDoubly *initializeCircularDoubly(int value) {
+NodeCircularDoubly *initialize_circular_doubly(int value) {
     NodeCircularDoubly *new_node = (NodeCircularDoubly*) malloc(sizeof(NodeCircularDoubly));
 
     new_node->data = value;
@@ -14,14 +14,14 @@ NodeCircularDoubly *initializeCircularDoubly(int value) {
     return new_node;
 }
 
-void insertBeginCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value) {
+void insert_begin_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value) {
     /*  insert a new node at the beginning of the list, if the head is NULL, then 
 		the head update to the new node and new node points to itself; otherwise,
 		update the head update to the new node and the next pointer of the last node
         points to the new node and also the previous pointer of the new node points to the last node.
     */
 
-    NodeCircularDoubly *new_node = initializeCircularDoubly(value); // initialize the new node
+    NodeCircularDoubly *new_node = initialize_circular_doubly(value); // initialize the new node
 
     if(new_node == NULL)
 	{
@@ -44,7 +44,7 @@ void insertBeginCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **l
     }
 }
 
-void insertLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value) {
+void insert_last_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value) {
     /*	insert a new node at the end of the list, if the head and the last are NULL(list is empty),
 		then the head node update to the new node and new node points to itself; otherwise,
 		the next of current last node points to the new node, so the new node is the last node node and at the end,
@@ -52,7 +52,7 @@ void insertLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **la
         and the previous pointer of the head node points to the new last node(new node).
 	*/
 
-    NodeCircularDoubly *new_node = initializeCircularDoubly(value);
+    NodeCircularDoubly *new_node = initialize_circular_doubly(value);
 
     if(*head == NULL && *last == NULL)  // check if the list is empty
     {
@@ -70,7 +70,7 @@ void insertLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **la
 }
 
 
-void deleteFirstCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last) {
+void delete_first_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last) {
     if(*head == NULL) return;
 
     NodeCircularDoubly *temp = *head;
@@ -89,7 +89,7 @@ void deleteFirstCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **l
     free(temp); // deallocate the memory(delete) the old head node
 }
 
-void deleteLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last) {
+void delete_last_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last) {
     if(*head == NULL) return;
 
     NodeCircularDoubly *temp = *last;
@@ -108,7 +108,7 @@ void deleteLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **la
     free(temp); // deallocate the memory(delete) the old head node
 }
 
-void deleteWholeListCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last) {
+void delete_whole_list_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last) {
     /* function for delete the whole list and free the memory. */
 
 	if(*head == NULL) return;
@@ -129,7 +129,7 @@ void deleteWholeListCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly
 }
 
 
-void displayCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last) {
+void display_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last) {
     if(*head == *last && *head == NULL)
     {
         printf("The List Is Empty...\n");

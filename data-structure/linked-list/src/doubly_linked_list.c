@@ -4,7 +4,7 @@
 #include "../include/doubly_linked_list.h"
 
 
-NodeDoubly *initialNodeDoubly(NodeDoubly **head, int value) {
+NodeDoubly *initial_node_doubly(NodeDoubly **head, int value) {
 	/*	initialize a new node, if the list is empty, then the `head` will update to the new node,
 		but if the list isn't empty, the new node will set to the last node. */
 
@@ -17,15 +17,15 @@ NodeDoubly *initialNodeDoubly(NodeDoubly **head, int value) {
 	{
 		/*	if the `head` node is NULL(the list is empty), the `previous` of the new node
 			will set to the NULL and the `head` will update to the new node. */
-		insertBeginDoubly(&(*head), value);
+		insert_begin_doubly(&(*head), value);
 	} else {
 		/* if the list isn't empty, the new node will set to the last node  */
-		insertLastDoubly(&(*head), value);
+		insert_last_doubly(&(*head), value);
 	}
 }
 
 
-void insertBeginDoubly(NodeDoubly **head, int value) {
+void insert_begin_doubly(NodeDoubly **head, int value) {
 	/*	insert at the beginning of the list
 		first node is the node that the `previous` points to the NULL */
 
@@ -39,7 +39,7 @@ void insertBeginDoubly(NodeDoubly **head, int value) {
 	(*head) = new_node;	// the new node is set to the `head` node
 }
 
-void insertLastDoubly(NodeDoubly **head, int value) {
+void insert_last_doubly(NodeDoubly **head, int value) {
 	/*	insert at the last of the list
 		last node is the node that the `next` points to the NULL */
 
@@ -54,7 +54,7 @@ void insertLastDoubly(NodeDoubly **head, int value) {
 	new_node->previous = current;	// the new node's previous is points to the current
 }
 
-void insertPositionDoubly(NodeDoubly **head, int position, int value) {
+void insert_position_doubly(NodeDoubly **head, int position, int value) {
 	/*	insert a new node at the position, if the position is invalid then exit the program,
 		but if the position is the last position then insert a new node at the end of the list,
 		and if the position is at first or between first and last index, then add the new node
@@ -79,7 +79,7 @@ void insertPositionDoubly(NodeDoubly **head, int position, int value) {
 
 	new_node->data = value;
 
-	if(current->next == NULL) insertLastDoubly(&(*head), value);	// if `current` is the last position(node), then add the node at the end
+	if(current->next == NULL) insert_last_doubly(&(*head), value);	// if `current` is the last position(node), then add the node at the end
 	else
 	{
 		new_node->next = current->next;	// point the next of the new node to the node currently after the current(position) node
@@ -89,7 +89,7 @@ void insertPositionDoubly(NodeDoubly **head, int position, int value) {
 	}
 }
 
-void insertAfterNodeDoubly(NodeDoubly *node_position, int value) {
+void insert_after_node_doubly(NodeDoubly *node_position, int value) {
 	/*	insert a new node after the specified node provided by the function.
 		if the node is NULL, return and exit the function; otherwise,
 		allocate a new node and insert it after the specified node.
@@ -109,7 +109,7 @@ void insertAfterNodeDoubly(NodeDoubly *node_position, int value) {
 }
 
 
-void deleteFirstDoubly(NodeDoubly **head) {
+void delete_first_doubly(NodeDoubly **head) {
 	/* delete the first node of the list and deallocate the memory */
 	
 	if(*head == NULL) return;
@@ -122,7 +122,7 @@ void deleteFirstDoubly(NodeDoubly **head) {
 	free(temp);	// deallocate the memory
 }
 
-void deleteLastDoubly(NodeDoubly **head) {
+void delete_last_doubly(NodeDoubly **head) {
 	/* delete the last node of the list and deallocate the memory */
 
 	if(*head == NULL) return;
@@ -135,7 +135,7 @@ void deleteLastDoubly(NodeDoubly **head) {
 	free(temp);	// deallocate the memory
 }
 
-void deleteNodeByValue(NodeDoubly **head, int value) {
+void delete_node_by_value(NodeDoubly **head, int value) {
 	/*	delete a specified node by a specified value provided by the function.
 
 		if the node is NULL, return and exit the function; otherwise,
@@ -152,7 +152,7 @@ void deleteNodeByValue(NodeDoubly **head, int value) {
 
 	if((*head)->data == value)
 	{
-		deleteFirstDoubly(&(*head));
+		delete_first_doubly(&(*head));
 		return;
 	}
 
@@ -168,23 +168,23 @@ void deleteNodeByValue(NodeDoubly **head, int value) {
 		current = current->next;	// move the current
 	}
 
-	if(current->next->data == value) deleteLastDoubly(&(*head));
+	if(current->next->data == value) delete_last_doubly(&(*head));
 }
 
-void deleteWholeListDoubly(NodeDoubly **head) {
+void delete_whole_list_doubly(NodeDoubly **head) {
 	/*	function for delete the whole list and free the memory.
 	 	use the recursive way.*/
 
 	if(*head == NULL) return;
 
-	deleteWholeListDoubly(&(*head)->next);
+	delete_whole_list_doubly(&(*head)->next);
 	free(*head);
 
 	*head = NULL;
 }
 
 
-void displayDoubly(NodeDoubly **head) {
+void display_doubly(NodeDoubly **head) {
     if(*head == NULL)
     {
         printf("\nThe List Is Empty !\n");
@@ -203,7 +203,7 @@ void displayDoubly(NodeDoubly **head) {
 	printf("NULL\n");
 }
 
-void reverseListDoubly(NodeDoubly **head) {
+void reverse_list_doubly(NodeDoubly **head) {
 	NodeDoubly *temp, *current;	// temp: temporary node for helper pointer and change the head after reverse. current: traverse to the list on each node
 
 	temp = *head;	// set temp to the current head node

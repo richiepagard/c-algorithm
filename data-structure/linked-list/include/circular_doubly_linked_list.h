@@ -7,15 +7,15 @@ typedef struct node_circular_doubly {
 	struct node_circular_doubly *previous;
 } NodeCircularDoubly;
 
-NodeCircularDoubly *initializeCircularDoubly(int value);
-void insertBeginCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value);
-void insertLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value);
+NodeCircularDoubly *initialize_circular_doubly(int value);
+void insert_begin_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value);
+void insert_last_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last, int value);
 
-void deleteFirstCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
-void deleteLastCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
-void deleteWholeListCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
+void delete_first_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
+void delete_last_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
+void delete_whole_list_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
 
-void displayCircularDoubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
+void display_circular_doubly(NodeCircularDoubly **head, NodeCircularDoubly **last);
 
 
 void run_circular_doubly_linked_list_example();

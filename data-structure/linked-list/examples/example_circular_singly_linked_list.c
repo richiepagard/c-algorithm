@@ -10,21 +10,21 @@ void run_circular_singly_linked_list_example() {
 	printf("Running Circular Singly Linked List Example...\n\n");
 
     // initialize and insert nodes
-	insertBeginCircularSingly(&head, 6);
-	insertBeginCircularSingly(&head, 3);
-	insertLastCircularSingly(&head, 9);
+	insert_begin_circular_singly(&head, 6);
+	insert_begin_circular_singly(&head, 3);
+	insert_last_circular_singly(&head, 9);
 
     // display the list after insertions
     printf("List After Insertions: \n");
-	displayCircularSingly(&head);
+	display_circular_singly(&head);
 	printf("\n");
 
     // delete the first and the last node
-	deleteFirstCircularSingly(&head);
-	deleteLastCircularSingly(&head);
+	delete_first_circular_singly(&head);
+	delete_last_circular_singly(&head);
 
     printf("List After Deletions: ");
-	displayCircularSingly(&head);
+	display_circular_singly(&head);
 	printf("\n");
 
 
@@ -33,8 +33,8 @@ void run_circular_singly_linked_list_example() {
 
 
     // clean up the list
-	deleteWholeListCircularSingly(&head);
+	delete_whole_list_circular_singly(&head);
 	printf("List After Deleting All Nodes: ");
-    displayCircularSingly(&head);
+    display_circular_singly(&head);
     printf("\n");
 }
