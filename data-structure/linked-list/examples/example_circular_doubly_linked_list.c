@@ -10,22 +10,22 @@ void run_circular_doubly_linked_list_example() {
 	printf("Running Circular Doubly Linked List Example...\n");
 
     // initialize and insert nodes
-	insertBeginCircularDoubly(&head, &last, 6);
-	insertBeginCircularDoubly(&head, &last, 3);
-	insertLastCircularDoubly(&head, &last, 9);
+	insert_begin_circular_doubly(&head, &last, 6);
+	insert_begin_circular_doubly(&head, &last, 3);
+	insert_last_circular_doubly(&head, &last, 9);
 
     // display the list after insertions
     printf("List After Insertions: \n");
-	displayCircularDoubly(&head, &last);
+	display_circular_doubly(&head, &last);
     printf("\n");
 
     // delete the first and the last node
-    deleteFirstCircularDoubly(&head, &last);
-    deleteLastCircularDoubly(&head, &last);
+    delete_first_circular_doubly(&head, &last);
+    delete_last_circular_doubly(&head, &last);
 
     // display the list after insertions
     printf("List After Deletion: \n");
-	displayCircularDoubly(&head, &last);
+	display_circular_doubly(&head, &last);
     printf("\n");
 
     /* you can call the tool functions here */
@@ -33,8 +33,8 @@ void run_circular_doubly_linked_list_example() {
 
 
     // clean up the list
-	deleteWholeListCircularDoubly(&head, &last);
+	delete_whole_list_circular_doubly(&head, &last);
     printf("List After Deleting All Nodes: \n");
-    displayCircularDoubly(&head, &last);
+    display_circular_doubly(&head, &last);
     printf("\n");
 }
