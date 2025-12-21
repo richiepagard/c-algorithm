@@ -6,7 +6,7 @@
 #include "../include/singly_linked_list.h"
 
 
-Node *initialNodeSingly(int value) {
+Node *initial_node_singly(int value) {
     Node *new_node = (Node*) malloc(sizeof(Node));
 
     if(new_node == NULL)
@@ -21,7 +21,7 @@ Node *initialNodeSingly(int value) {
 }
 
 
-void insertBeginSingly(Node **head, Node *new_node) {    
+void insert_begin_singly(Node **head, Node *new_node) {    
     if(*head == NULL)
     {
         // if the list is empty, the new node is the head node
@@ -33,7 +33,7 @@ void insertBeginSingly(Node **head, Node *new_node) {
     }
 }
 
-void insertLastSingly(Node **head, Node *new_node) {
+void insert_last_singly(Node **head, Node *new_node) {
     Node *current = *head;
 
     if(*head == NULL)
@@ -48,7 +48,7 @@ void insertLastSingly(Node **head, Node *new_node) {
     }
 }
 
-void insertPositionSingly(Node **head, Node *new_node, int position) {
+void insert_position_singly(Node **head, Node *new_node, int position) {
     int counter = 0;
     Node *current = *head;
 	Node *previous;
@@ -59,7 +59,7 @@ void insertPositionSingly(Node **head, Node *new_node, int position) {
         counter++;
     }
 
-    if(position == 0) insertBeginSingly(head, new_node);	// insert at first position
+    if(position == 0) insert_begin_singly(head, new_node);	// insert at first position
 	else if(position > 0 && position <= counter)	// if position between 1 to last node
 	{
 		current = *head;
@@ -77,7 +77,7 @@ void insertPositionSingly(Node **head, Node *new_node, int position) {
 }
 
 
-void deleteBeginSingly(Node **head) {
+void delete_begin_singly(Node **head) {
     if(*head == NULL) return;
     else
     {
@@ -88,7 +88,7 @@ void deleteBeginSingly(Node **head) {
     }
 }
 
-void deleteLastSingly(Node **head) {
+void delete_last_singly(Node **head) {
     if(*head == NULL) return;
     else
     {
@@ -106,14 +106,14 @@ void deleteLastSingly(Node **head) {
     }
 }
 
-void deletePositionSingly(Node **head, int position) {
+void delete_position_singly(Node **head, int position) {
     int counter = 0;
 
     if(*head == NULL) return;
 
     Node *current = *head;
 	Node *previous;
-    if(position == 0) deleteBeginSingly(head);  // delete the first node
+    if(position == 0) delete_begin_singly(head);  // delete the first node
     else
     {
         while(current != NULL)
@@ -139,20 +139,20 @@ void deletePositionSingly(Node **head, int position) {
 
 }
 
-void deleteWholeListSingly(Node **head) {
+void delete_whole_list_singly(Node **head) {
 	/* function for delete the whole list and free the memory.
 	 * use the recursive way.*/
 
 	if(*head == NULL) return;
 
-	deleteWholeListSingly(&(*head)->next);
+	delete_whole_list_singly(&(*head)->next);
 	free(*head);
 
     *head = NULL;
 }
 
 
-void displaySingly(Node **head) {
+void display_singly(Node **head) {
     if(*head == NULL)
     {
         printf("\nThe List Is Empty !\n");
@@ -171,15 +171,15 @@ void displaySingly(Node **head) {
     printf("NULL\n");
 }
 
-void displayReverseSingly(Node **head) {
+void display_reverse_singly(Node **head) {
     if(*head == NULL) return;
 
-    displayReverseSingly(&(*head)->next);
+    display_reverse_singly(&(*head)->next);
     printf("%d -> ", (*head)->data);
 }
 
 
-int findMaximumSingly(Node **head) {
+int find_maximum_singly(Node **head) {
     /* find the maximum node's data and return it */
 
     int maximum = INT_MIN;
@@ -197,35 +197,35 @@ int findMaximumSingly(Node **head) {
     return maximum;
 }
 
-int countNodeSingly(Node **head) {
+int count_node_singly(Node **head) {
 	/* count the nodes of the list and return it  */
 
 	if(*head == NULL) return 0;
-	else return(1 + countNodeSingly(&(*head)->next));
+	else return(1 + count_node_singly(&(*head)->next));
 }
 
-bool searchRecursiveSingly(Node **head, int data) {
+bool search_recursive_singly(Node **head, int data) {
 	/* search for `data` and if the data is exists in the list, then return True,
 	 * otherwise, return False*/
 
 	if(*head == NULL) return false;
 	else if( (*head)->data == data ) return true;
 
-	return searchRecursiveSingly(&(*head)->next, data);
+	return search_recursive_singly(&(*head)->next, data);
 }
 
-int findIndexRecursiveSingly(Node **head, int data) {
+int find_index_recursive_singly(Node **head, int data) {
 	/* find the `data` index in the list and return it  */
 
 	int counter = 0;
 
 	if(counter == data) return (*head)->data;
 
-	return findIndexRecursiveSingly(&(*head)->next, data - 1);
+	return find_index_recursive_singly(&(*head)->next, data - 1);
 }
 
 
-Node *concatenateTwoListSingly(Node **head1, Node **head2) {
+Node *concatenate_two_list_singly(Node **head1, Node **head2) {
     /* concatenation, concatenate two singly linked list together and return the first list */
 
 	Node *current = *head1;
