@@ -6,7 +6,7 @@
 #include "../include/stack.h"
 
 
-void postorderIterator(TreeNode *root) {
+void postorder_iterator(TreeNode *root) {
     /*  the function performs a postorder traversal of a binary tree using two stacks approach
 
         1- use two stacks:
@@ -54,7 +54,7 @@ void postorderIterator(TreeNode *root) {
     }
 }
 
-void postorderRecursive(TreeNode *node) {
+void postorder_recursive(TreeNode *node) {
     /*  postorder traverse on the binary tree
 
         @node: pointer to the current node being visited
@@ -67,7 +67,7 @@ void postorderRecursive(TreeNode *node) {
 
     if(node == NULL) return;
 
-    postorderRecursive(node->left);  // recursively traverse the left subtree
-    postorderRecursive(node->right); // recursively traverse the right subtree
+    postorder_recursive(node->left);  // recursively traverse the left subtree
+    postorder_recursive(node->right); // recursively traverse the right subtree
     printf(" %d ", node->data); // print the data of the current node
 }

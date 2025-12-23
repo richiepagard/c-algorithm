@@ -33,11 +33,11 @@ void run_bst_example() {
 	insert_bst(root_node, 9);	// insert a new node with value 9
 
 	printf("\nInorder traverse on BST (ITERATOR): \n");
-	inorderIterator(root_node);
+	inorder_iterator(root_node);
 
 	delete_node_bst(root_node, 8);
 	printf("\nInorder traverse on BST (ITERATOR) after deletion action of key `8`: \n");
-	inorderIterator(root_node);
+	inorder_iterator(root_node);
 
 
 	// call the tool functions here
