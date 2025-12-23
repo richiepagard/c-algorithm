@@ -140,12 +140,12 @@ bool is_complete(TreeNode *root, int capacity) {
 
     if(root == NULL) return true;   // because an empty tree is considered complete
 
-	Queue *q = initializeQueue(capacity);
+	Queue *q = init_queue(capacity);
 	enqueue(q, root);
 
 	bool flag = false;  // to indicate if a non-full node has been encountered
 
-	while(!isQueueEmpty(q))
+	while(!is_queue_empty(q))
 	{
 		TreeNode *current = dequeue(q);
 

@@ -5,7 +5,7 @@
 #include "../../../include/queue.h"
 
 
-Queue *initializeQueue(int capacity) {
+Queue *init_queue(int capacity) {
     Queue *new_queue = (Queue *) malloc(sizeof(Queue));
     if(!new_queue)
     {
@@ -46,6 +46,6 @@ TreeNode *dequeue(Queue *queue) {
     return queue->data[queue->front++]; // remove the node and increment front
 }
 
-int isQueueEmpty(Queue *queue) {
+int is_queue_empty(Queue *queue) {
     return queue->front == queue->rear;
 }
