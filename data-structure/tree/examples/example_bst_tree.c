@@ -30,12 +30,12 @@ void run_bst_example() {
 
 	root_node->right->left = init_tree_node(20);	// create a left child for the right node
 	
-	insertBST(root_node, 9);	// insert a new node with value 9
+	insert_bst(root_node, 9);	// insert a new node with value 9
 
 	printf("\nInorder traverse on BST (ITERATOR): \n");
 	inorderIterator(root_node);
 
-	deleteNodeBST(root_node, 8);
+	delete_node_bst(root_node, 8);
 	printf("\nInorder traverse on BST (ITERATOR) after deletion action of key `8`: \n");
 	inorderIterator(root_node);
 
