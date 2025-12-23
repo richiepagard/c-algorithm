@@ -16,7 +16,7 @@ void preorderIterator(TreeNode *root) {
     StackNode *top = NULL;  // initialize the stack
     push(&top, root);   // push the root node onto the stack
 
-    while(!isEmpty(top))
+    while(!is_empty(top))
     {
         TreeNode *current = pop(&top);  // pop the top node from the stack
         printf(" %d ", current->data);  // print the current ndoe's data

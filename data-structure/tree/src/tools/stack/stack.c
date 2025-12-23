@@ -5,7 +5,7 @@
 #include "../../../include/stack.h"
 
 
-StackNode *initializeStackNode(TreeNode *tree_node) {
+StackNode *init_stack_node(TreeNode *tree_node) {
     /*  initialize a new stack node.
         creates a new stack node, assings the provided tree node to it,
         and initializes the next pointer to the NULL.
@@ -34,7 +34,7 @@ StackNode *initializeStackNode(TreeNode *tree_node) {
     return new_node;
 }
 
-bool isEmpty(StackNode *top) {
+bool is_empty(StackNode *top) {
     return (top == NULL);
 }
 
@@ -50,7 +50,7 @@ void push(StackNode **top, TreeNode *node) {
             - update the top pointer to the newly created stack node
     */
 
-    StackNode *new_node = initializeStackNode(node);
+    StackNode *new_node = init_stack_node(node);
 
     if(new_node == NULL) return;
 
@@ -60,7 +60,7 @@ void push(StackNode **top, TreeNode *node) {
 }
 
 TreeNode *pop(StackNode **top) {
-    if(isEmpty(*top))
+    if(is_empty(*top))
     {
         printf("Stack Underflow. No elements to pop.\n");
         return NULL;

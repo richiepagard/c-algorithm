@@ -37,7 +37,7 @@ void postorderIterator(TreeNode *root) {
     StackNode *aux_stack = NULL;   // initialize auxiliary stack for storing temporary nodes during traversal
     push(&main_stack, root);   // push the root node onto the stack
 
-    while(!isEmpty(main_stack))
+    while(!is_empty(main_stack))
     {
         /* pop from first stack and push to the second(auxiliar) stack */
         TreeNode *current =  pop(&main_stack);  // pop from main stack
@@ -47,7 +47,7 @@ void postorderIterator(TreeNode *root) {
         if(current->right != NULL) push(&main_stack, current->right);  // push the right child
     }
 
-    while(!isEmpty(aux_stack))
+    while(!is_empty(aux_stack))
     {
         TreeNode *node = pop(&aux_stack);
         printf(" %d ", node->data);

@@ -12,8 +12,8 @@ typedef struct linked_list_node {
 } StackNode;
 
 
-StackNode *initializeStackNode(TreeNode *tree_node);
-bool isEmpty(StackNode *top);
+StackNode *init_stack_node(TreeNode *tree_node);
+bool is_empty(StackNode *top);
 void push(StackNode **top, TreeNode *node);
 TreeNode *pop(StackNode **top);
 

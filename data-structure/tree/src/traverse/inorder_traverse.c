@@ -16,7 +16,7 @@ void inorderIterator(TreeNode *root) {
         return;
     }
 
-    while(current != NULL || !isEmpty(top))
+    while(current != NULL || !is_empty(top))
     {
         if(current != NULL) {
             push(&top, current);    // push the current node onto the stack
