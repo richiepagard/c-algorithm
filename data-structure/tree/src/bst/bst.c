@@ -6,7 +6,7 @@
 
 
 TreeNode* insertBSTRecursive(TreeNode* root, int value) {
-	if(root == NULL) return initializeTreeNode(value);
+	if(root == NULL) return init_tree_node(value);
 	if(value < root->data)
 	{
 		root->left = insertBSTRecursive(root->left, value);
@@ -20,7 +20,7 @@ TreeNode* insertBSTRecursive(TreeNode* root, int value) {
 }
 
 TreeNode* insertBST(TreeNode* root, int value) {
-	if(root == NULL) return initializeTreeNode(value);
+	if(root == NULL) return init_tree_node(value);
 
 	TreeNode* current = root;
 	TreeNode* parent = NULL;
@@ -34,7 +34,7 @@ TreeNode* insertBST(TreeNode* root, int value) {
 	}
 
 	// create a new node and attach it to the appropriate parent node
-	TreeNode* new_node = initializeTreeNode(value);
+	TreeNode* new_node = init_tree_node(value);
 
 	if(value < parent->data) parent->left = new_node;
 	else parent->right = new_node;

@@ -22,13 +22,13 @@ void run_bst_example() {
 
 	printf("Running BST Example...\n");
 
-	root_node = initializeTreeNode(8);	// initialize the root node with a value of 8
+	root_node = init_tree_node(8);	// initialize the root node with a value of 8
 	
 	// create left and right children of the root node
-	root_node->left = initializeTreeNode(5);
-	root_node->right = initializeTreeNode(30);
+	root_node->left = init_tree_node(5);
+	root_node->right = init_tree_node(30);
 
-	root_node->right->left = initializeTreeNode(20);	// create a left child for the right node
+	root_node->right->left = init_tree_node(20);	// create a left child for the right node
 	
 	insertBST(root_node, 9);	// insert a new node with value 9
 
