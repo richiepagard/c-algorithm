@@ -12,22 +12,22 @@ typedef struct tree_node {
 } TreeNode;
 
 
-TreeNode *initializeTreeNode(int value);
+TreeNode *init_tree_node(int value);
 
-void deleteTree(TreeNode **node);
+void delete_tree(TreeNode **node);
 
-int heightNode(TreeNode *node);
-int maxNode(TreeNode *node);
+int height_node(TreeNode *node);
+int max_node(TreeNode *node);
 unsigned int leafQuantity(TreeNode *node);
 unsigned int nodesQuantity(TreeNode *node);
 
 int identical(TreeNode *node1, TreeNode *node2);
-bool isComplete(TreeNode *root, int capacity);
-int findLevel(TreeNode *node, int data, int level);
+bool is_complete(TreeNode *root, int capacity);
+int find_level(TreeNode *node, int data, int level);
 bool ancestors(TreeNode *node, int data);
 TreeNode *LCA(TreeNode *root, int x, bool x_flag, int y, bool y_flag);
-TreeNode *LCAWitchDefault(TreeNode *root, int x, int y);
-TreeNode *leftMost(TreeNode *root);
+TreeNode *LCA_widtch_defaultDefault(TreeNode *root, int x, int y);
+TreeNode *left_most(TreeNode *root);
 
 
 

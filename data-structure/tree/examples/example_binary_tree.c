@@ -22,20 +22,20 @@ void run_binary_tree_example() {
 
     printf("Running Binary Tree Example...\n");
 
-    root_node = initializeTreeNode(1);  // initialize the root node with a value of 1
+    root_node = init_tree_node(1);  // initialize the root node with a value of 1
 
     // create left and right children of the root node
-    root_node->left = initializeTreeNode(2);
-    root_node->right = initializeTreeNode(3);
+    root_node->left = init_tree_node(2);
+    root_node->right = init_tree_node(3);
 
     // create left and right children of the left node
-    root_node->left->left = initializeTreeNode(4);
-    root_node->left->right = initializeTreeNode(5);
+    root_node->left->left = init_tree_node(4);
+    root_node->left->right = init_tree_node(5);
 
-    root_node->left->right->left = initializeTreeNode(6);   // create a left child for the node with value 5
+    root_node->left->right->left = init_tree_node(6);   // create a left child for the node with value 5
 
     // print the height of the binary tree from the root node
-    printf("The height of the root node is: %d\n", heightNode(root_node));
+    printf("The height of the root node is: %d\n", height_node(root_node));
 
     // call the tool functions here
     printf("The total quantity of leafs from the node is: %d\n", leafQuantity(root_node));  // total quantity of leafs
@@ -52,5 +52,5 @@ void run_binary_tree_example() {
 
     // delete the whole tree
     printf("\n\nDelete the whole tree:\n");
-    deleteTree(&root_node);
+    delete_tree(&root_node);
 }

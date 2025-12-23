@@ -6,7 +6,7 @@
 #include "../include/stack.h"
 
 
-void postorderIterator(TreeNode *root) {
+void postorder_iterator(TreeNode *root) {
     /*  the function performs a postorder traversal of a binary tree using two stacks approach
 
         1- use two stacks:
@@ -37,7 +37,7 @@ void postorderIterator(TreeNode *root) {
     StackNode *aux_stack = NULL;   // initialize auxiliary stack for storing temporary nodes during traversal
     push(&main_stack, root);   // push the root node onto the stack
 
-    while(!isEmpty(main_stack))
+    while(!is_empty(main_stack))
     {
         /* pop from first stack and push to the second(auxiliar) stack */
         TreeNode *current =  pop(&main_stack);  // pop from main stack
@@ -47,14 +47,14 @@ void postorderIterator(TreeNode *root) {
         if(current->right != NULL) push(&main_stack, current->right);  // push the right child
     }
 
-    while(!isEmpty(aux_stack))
+    while(!is_empty(aux_stack))
     {
         TreeNode *node = pop(&aux_stack);
         printf(" %d ", node->data);
     }
 }
 
-void postorderRecursive(TreeNode *node) {
+void postorder_recursive(TreeNode *node) {
     /*  postorder traverse on the binary tree
 
         @node: pointer to the current node being visited
@@ -67,7 +67,7 @@ void postorderRecursive(TreeNode *node) {
 
     if(node == NULL) return;
 
-    postorderRecursive(node->left);  // recursively traverse the left subtree
-    postorderRecursive(node->right); // recursively traverse the right subtree
+    postorder_recursive(node->left);  // recursively traverse the left subtree
+    postorder_recursive(node->right); // recursively traverse the right subtree
     printf(" %d ", node->data); // print the data of the current node
 }

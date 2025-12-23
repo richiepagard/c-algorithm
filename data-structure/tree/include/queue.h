@@ -9,11 +9,11 @@ typedef struct queue {
     int capacity;   // maximum number of elements in the queue
 } Queue;
 
-Queue *initializeQueue(int capacity);
+Queue *init_queue(int capacity);
 
 TreeNode *dequeue(Queue *queue);
 void enqueue(Queue *queue, TreeNode *node);
 
-int isQueueEmpty(Queue *queue);
+int is_queue_empty(Queue *queue);
 
 #endif  // QUEUE_H

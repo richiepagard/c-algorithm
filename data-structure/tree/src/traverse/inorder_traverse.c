@@ -6,7 +6,7 @@
 #include "../include/stack.h"
 
 
-void inorderIterator(TreeNode *root) {
+void inorder_iterator(TreeNode *root) {
     TreeNode *current = root;   // initialize the current node to the root
     StackNode *top = NULL;  // initialize the stack
 
@@ -16,7 +16,7 @@ void inorderIterator(TreeNode *root) {
         return;
     }
 
-    while(current != NULL || !isEmpty(top))
+    while(current != NULL || !is_empty(top))
     {
         if(current != NULL) {
             push(&top, current);    // push the current node onto the stack
@@ -32,7 +32,7 @@ void inorderIterator(TreeNode *root) {
     printf("\n");
 }
 
-void inorderRecursive(TreeNode *node) {
+void inorder_recursive(TreeNode *node) {
     /*  inorder traverse on the binary tree
 
         @node: pointer to the current node being visited
@@ -45,7 +45,7 @@ void inorderRecursive(TreeNode *node) {
 
    if(node == NULL) return;
 
-   inorderRecursive(node->left); // recursively traverse the left subtree
+   inorder_recursive(node->left); // recursively traverse the left subtree
    printf(" %d ", node->data);    // print the data of the current node
-   inorderRecursive(node->right);    // recursively traverse the right subtree
+   inorder_recursive(node->right);    // recursively traverse the right subtree
 }

@@ -6,7 +6,7 @@
 #include "../include/stack.h"
 
 
-void preorderIterator(TreeNode *root) {
+void preorder_iterator(TreeNode *root) {
     if(root == NULL)
     {
         printf("Tree Is Empty !\n");
@@ -16,7 +16,7 @@ void preorderIterator(TreeNode *root) {
     StackNode *top = NULL;  // initialize the stack
     push(&top, root);   // push the root node onto the stack
 
-    while(!isEmpty(top))
+    while(!is_empty(top))
     {
         TreeNode *current = pop(&top);  // pop the top node from the stack
         printf(" %d ", current->data);  // print the current ndoe's data
@@ -29,7 +29,7 @@ void preorderIterator(TreeNode *root) {
     }
 }
 
-void preorderRecursive(TreeNode *node) {
+void preorder_recursive(TreeNode *node) {
     /*  preorder traverse on the binary tree
 
         @node: pointer to the current node being visited
@@ -43,6 +43,6 @@ void preorderRecursive(TreeNode *node) {
     if(node == NULL) return;
 
     printf(" %d ", node->data); // print the data of the current node
-    preorderRecursive(node->left);   // recursively traverse the left subtree
-    preorderRecursive(node->right);  // recursively traverse the right subtree
+    preorder_recursive(node->left);   // recursively traverse the left subtree
+    preorder_recursive(node->right);  // recursively traverse the right subtree
 }

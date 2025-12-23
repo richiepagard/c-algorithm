@@ -7,7 +7,7 @@
 #include "../include/queue.h"
 
 
-TreeNode *initializeTreeNode(int value) {
+TreeNode *init_tree_node(int value) {
     /*  initialize a new tree node.
         creates a new tree node, assigns the provided value to its data field,
         and sets the left and right children to the NULL.
@@ -37,7 +37,7 @@ TreeNode *initializeTreeNode(int value) {
 }
 
 
-int heightNode(TreeNode *node) {
+int height_node(TreeNode *node) {
     /*  finds the height of the binary tree node
 
         @node: pointer to the node to find the height of
@@ -55,8 +55,8 @@ int heightNode(TreeNode *node) {
     else
     {
         // calculate the heights of left and right subtrees
-        left_height = heightNode(node->left);
-        right_height = heightNode(node->right);
+        left_height = height_node(node->left);
+        right_height = height_node(node->right);
 
         /*  return the greater height between left and right subtrees,
             adding 1 to account for the current node level
@@ -96,7 +96,7 @@ unsigned int nodesQuantity(TreeNode *node) {
     return (node == NULL) ? 0 : (1 + nodesQuantity(node->left) + nodesQuantity(node->right));
 }
 
-int maxNode(TreeNode *node) {
+int max_node(TreeNode *node) {
     /*  find the maximum node of binary tree
 
         @node: pointer to the node to find the maximum of
@@ -111,8 +111,8 @@ int maxNode(TreeNode *node) {
 
     max = node->data;
     // find the maximum node of left and right subtrees
-    left_max = maxNode(node->left);
-    right_max = maxNode(node->right);
+    left_max = max_node(node->left);
+    right_max = max_node(node->right);
 
     // save the greater node between left and right subtrees to the `max` variable
     max = (left_max > max ? left_max : max);
@@ -127,7 +127,7 @@ int identical(TreeNode *node1, TreeNode *node2) {
     return 0;
 }
 
-bool isComplete(TreeNode *root, int capacity) {
+bool is_complete(TreeNode *root, int capacity) {
     /*  if a tree -binary tree- is complete or not
 
         @root: pointer to the root node of the tree
@@ -140,12 +140,12 @@ bool isComplete(TreeNode *root, int capacity) {
 
     if(root == NULL) return true;   // because an empty tree is considered complete
 
-	Queue *q = initializeQueue(capacity);
+	Queue *q = init_queue(capacity);
 	enqueue(q, root);
 
 	bool flag = false;  // to indicate if a non-full node has been encountered
 
-	while(!isQueueEmpty(q))
+	while(!is_queue_empty(q))
 	{
 		TreeNode *current = dequeue(q);
 
@@ -176,7 +176,7 @@ bool isComplete(TreeNode *root, int capacity) {
 	return true;
 }
 
-int findLevel(TreeNode *node, int data, int level) {
+int find_level(TreeNode *node, int data, int level) {
     /*  find the level of a node with the specified data
 
         @node: pointer to the current node being visited
@@ -190,9 +190,9 @@ int findLevel(TreeNode *node, int data, int level) {
     if(node->data == data) return level;    // return current level if the data matches
 
     // recursively search in the left and right subtree, increasing the level by 1
-    current = findLevel(node->left, data, level+1);
+    current = find_level(node->left, data, level+1);
     if(current != 0) return current;
-    current = findLevel(node->right, data, level+1);
+    current = find_level(node->right, data, level+1);
 
     return current;
 }
@@ -236,7 +236,7 @@ TreeNode *LCA(TreeNode *root, int x, bool x_flag, int y, bool y_flag) {
     return (leftLCA != NULL) ? leftLCA : rightLCA;
 }
 
-TreeNode *LCAWitchDefault(TreeNode *root, int x, int y) {
+TreeNode *LCA_widtch_defaultDefault(TreeNode *root, int x, int y) {
     /*  this is a wrapper function for set default values of flag of x and flag of y 
         and maybe some another default settings
     */
@@ -244,7 +244,7 @@ TreeNode *LCAWitchDefault(TreeNode *root, int x, int y) {
     return LCA(root, x, false, y, false);
 }
 
-TreeNode *leftMost(TreeNode *root) {
+TreeNode *left_most(TreeNode *root) {
 	/*	this function find and return the most left node
 		from a tree, start from root and find the last left node
 	*/
@@ -258,7 +258,7 @@ TreeNode *leftMost(TreeNode *root) {
 }
 
 
-void deleteTree(TreeNode **node) {
+void delete_tree(TreeNode **node) {
     /*  delete all nodes in the binary tree, delete the whole tree
 
         @node: pointer to the current node being deleted
@@ -269,8 +269,8 @@ void deleteTree(TreeNode **node) {
 
     if(node == NULL || *node == NULL) return;
 
-    deleteTree(&(*node)->left); // delete all nodes in the left subtree
-    deleteTree(&(*node)->right);    // delete all nodes in the right subtree
+    delete_tree(&(*node)->left); // delete all nodes in the left subtree
+    delete_tree(&(*node)->right);    // delete all nodes in the right subtree
 
     printf("\tDelete the node (%d)\n", (*node)->data); // print each node during deletion
 

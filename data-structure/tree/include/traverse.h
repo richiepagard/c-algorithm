@@ -4,15 +4,15 @@
 #include "binary_tree.h"    // use for get the Node structure
 
 
-void inorderIterator(TreeNode *root);
-void preorderIterator(TreeNode *root);
-void postorderIterator(TreeNode *root);
+void inorder_iterator(TreeNode *root);
+void preorder_iterator(TreeNode *root);
+void postorder_iterator(TreeNode *root);
 
 void levelorder(TreeNode *root, int capacity);
 
-void inorderRecursive(TreeNode *node);
-void preorderRecursive(TreeNode *node);
-void postorderRecursive(TreeNode *node);
+void inorder_recursive(TreeNode *node);
+void preorder_recursive(TreeNode *node);
+void postorder_recursive(TreeNode *node);
 
 
 #endif  // TRAVERSE_BINARY_TREE
